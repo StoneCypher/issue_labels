@@ -24,13 +24,13 @@ Published tags:
 
 ## [Untagged] - May 22, 2026 12:15:35 PM
 
-Commit [a1d8a28c0c7eac36aa98f27ae3b3332a9c2cf5a0](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/a1d8a28c0c7eac36aa98f27ae3b3332a9c2cf5a0)
+Commit [a1d8a28c0c7eac36aa98f27ae3b3332a9c2cf5a0](https://github.com/StoneCypher/issue_labels/commit/a1d8a28c0c7eac36aa98f27ae3b3332a9c2cf5a0)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
   * ci: gate verify-version-bump against the template repo; bump to 0.20.1 (#33)
   * The verify-version-bump CI job runs verify_version_bump.cjs, which
-calls `npm view react_ts_with_claude_gh_template version` to compare
+calls `npm view issue_labels version` to compare
 the local version against the published version. The template package
 isn't published, so npm view returns nothing valid and the job exits
 non-zero on every CI run for this template repo.
@@ -56,13 +56,13 @@ package name.
 
 ## [Untagged] - May 22, 2026 12:15:07 PM
 
-Commit [a628506200be6df94e7dbed309b6ad8452d28655](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/a628506200be6df94e7dbed309b6ad8452d28655)
+Commit [a628506200be6df94e7dbed309b6ad8452d28655](https://github.com/StoneCypher/issue_labels/commit/a628506200be6df94e7dbed309b6ad8452d28655)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
   * ci: gate verify-version-bump against the template repo; bump to 0.20.1
   * The verify-version-bump CI job runs verify_version_bump.cjs, which
-calls `npm view react_ts_with_claude_gh_template version` to compare
+calls `npm view issue_labels version` to compare
 the local version against the published version. The template package
 isn't published, so npm view returns nothing valid and the job exits
 non-zero on every CI run for this template repo.
@@ -88,7 +88,7 @@ package name.
 
 ## [Untagged] - May 22, 2026 11:57:40 AM
 
-Commit [340341aab5cee0cbc92da0fbf88eeb4f2ea2598a](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/340341aab5cee0cbc92da0fbf88eeb4f2ea2598a)
+Commit [340341aab5cee0cbc92da0fbf88eeb4f2ea2598a](https://github.com/StoneCypher/issue_labels/commit/340341aab5cee0cbc92da0fbf88eeb4f2ea2598a)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -115,7 +115,7 @@ to zero.
 
 ## [Untagged] - May 22, 2026 11:57:13 AM
 
-Commit [f2cede56d4d12e238c97bd7027bd4140a65c8474](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/f2cede56d4d12e238c97bd7027bd4140a65c8474)
+Commit [f2cede56d4d12e238c97bd7027bd4140a65c8474](https://github.com/StoneCypher/issue_labels/commit/f2cede56d4d12e238c97bd7027bd4140a65c8474)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -142,7 +142,7 @@ to zero.
 
 ## [Untagged] - May 22, 2026 2:01:41 AM
 
-Commit [20a9c106a021b1f837f8fc3770a117caf73ae6e6](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/20a9c106a021b1f837f8fc3770a117caf73ae6e6)
+Commit [20a9c106a021b1f837f8fc3770a117caf73ae6e6](https://github.com/StoneCypher/issue_labels/commit/20a9c106a021b1f837f8fc3770a117caf73ae6e6)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -184,7 +184,7 @@ already parallelized their respective steps internally.
 
 ## [Untagged] - May 22, 2026 2:00:45 AM
 
-Commit [5d98dc600c6391fdd548f12b235e0624a5b8886d](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/5d98dc600c6391fdd548f12b235e0624a5b8886d)
+Commit [5d98dc600c6391fdd548f12b235e0624a5b8886d](https://github.com/StoneCypher/issue_labels/commit/5d98dc600c6391fdd548f12b235e0624a5b8886d)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -226,7 +226,7 @@ already parallelized their respective steps internally.
 
 ## [Untagged] - May 22, 2026 1:57:13 AM
 
-Commit [3ab61405a5e42d110ff78565eeca923a6cd06646](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/3ab61405a5e42d110ff78565eeca923a6cd06646)
+Commit [3ab61405a5e42d110ff78565eeca923a6cd06646](https://github.com/StoneCypher/issue_labels/commit/3ab61405a5e42d110ff78565eeca923a6cd06646)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -255,7 +255,7 @@ parallel-stages PR can put into a single concurrent stage.
 
 ## [Untagged] - May 22, 2026 1:56:22 AM
 
-Commit [35fddbfc1b4f7e04c9a79f4dc2ea4f39bf747d68](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/35fddbfc1b4f7e04c9a79f4dc2ea4f39bf747d68)
+Commit [35fddbfc1b4f7e04c9a79f4dc2ea4f39bf747d68](https://github.com/StoneCypher/issue_labels/commit/35fddbfc1b4f7e04c9a79f4dc2ea4f39bf747d68)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -284,7 +284,7 @@ parallel-stages PR can put into a single concurrent stage.
 
 ## [Untagged] - May 22, 2026 1:52:33 AM
 
-Commit [9b93c871b183a14d400c8f4a02ed67627a3952b8](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/9b93c871b183a14d400c8f4a02ed67627a3952b8)
+Commit [9b93c871b183a14d400c8f4a02ed67627a3952b8](https://github.com/StoneCypher/issue_labels/commit/9b93c871b183a14d400c8f4a02ed67627a3952b8)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -316,7 +316,7 @@ ctsphase config.
 
 ## [Untagged] - May 22, 2026 1:51:40 AM
 
-Commit [bd107d7234218e20906d5892063e109041b988f2](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/bd107d7234218e20906d5892063e109041b988f2)
+Commit [bd107d7234218e20906d5892063e109041b988f2](https://github.com/StoneCypher/issue_labels/commit/bd107d7234218e20906d5892063e109041b988f2)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 

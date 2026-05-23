@@ -1,16 +1,46 @@
-# react_ts_with_claude_gh_template v0.20.2
+# issue_labels v0.1.0
 
-> Version 0.20.2 was built on Friday, May 22, 2026 at GMT-07:00 `1779478702719` from hash `a1d8a28`.
+> Version 0.1.0 was built on Friday, May 22, 2026 at GMT-07:00 `1779519147651` from hash `0fb6659`.
 
-TODO Put the project description here, please.
+A general-purpose **286-label issue taxonomy** for GitHub projects — 20 categories, 55 subcategories — paired with a 3D force-directed colorer that places each label as a point in the sRGB cube so visually-similar labels indicate semantically-related concerns.
 
-<!-- Supported embeds: 1779478702719 Friday, May 22, 2026 at GMT-07:00 66.66 2 50 a1d8a28 {{stochbranch}} 66.66 {{stochfunc}} {{stochline}} 1 3 {{unitbranch}} {{unitfunc}} {{unitline}} 2 0.20.2 -->
+<!-- Supported embeds: 1779519147651 Friday, May 22, 2026 at GMT-07:00 N/A 2 50 0fb6659 {{stochbranch}} N/A {{stochfunc}} {{stochline}} N/A N/A {{unitbranch}} {{unitfunc}} {{unitline}} N/A 0.1.0 -->
 
 
 
 
 
 &nbsp;
+
+&nbsp;
+
+## What's in here
+
+* `src/data/standard_issue_label.json` — the taxonomy itself, one label per line, in the canonical serialized form. This is the artifact most consumers want.
+* `src/build_js/assign_label_colors.cjs` — headless Node baker. Runs a force simulation in the sRGB cube and writes each label's settled position back as its `color` field. Also emits `docs/colors_trajectory.json` (the animation samples).
+* `src/build_js/visualize_colors_3d.cjs` — generator for `docs/colors_3d.html`, the in-browser three.js sim. Multi-tier springs (label → subcategory centroid → category centroid), constellation links, live sliders, spin rig, hover info, "export colors" button.
+* `src/build_js/bake_colors.cjs` — takes a `{ name: "#hex", ... }` map (the in-browser export) and writes the new colors back into the taxonomy JSON, preserving the canonical serialization.
+
+The 20 categories: Type · Infrastructure · Component · Status · Estimation · Meta · Needs · Quality · Language · Outreach · Documentation · Significance · Testing · Platform · AI · Stakeholder · Pipeline · Business · Localization · Legal.
+
+&nbsp;
+
+## Usage
+
+```bash
+npm install
+npm run viz        # bake colors (overwrites stored colors), then regenerate the HTML
+npm run viz:html   # regenerate ONLY the HTML; preserves whatever's currently stored as `color`
+npm run bake exported.json  # apply an in-browser export back to the taxonomy
+```
+
+The seed → live → export → bake loop:
+
+1. `npm run viz` bakes a starting set of colors using the headless Node simulation.
+2. Open `docs/colors_3d.html` in a browser. The in-browser sim runs more sophisticated physics (multi-tier springs, sub-sub floor, constellation links). The page's `seed()` randomizes positions per page-load (respecting per-channel pins), so the browser starts from a random state, not the stored `color`s.
+3. Drag sliders, let it settle, click **export colors** — the result is on the clipboard as `{ name: "#hex" }`.
+4. Save that to a file and run `npm run bake path/to/exported.json` to write it back into the JSON.
+5. From here, **refresh the HTML with `npm run viz:html`** — NOT `npm run viz`. The latter re-runs the baker and overwrites the colors you just baked in.
 
 &nbsp;
 
@@ -27,16 +57,16 @@ TODO Put the project description here, please.
   </tr>
   <tr>
     <th>Unit</th>
-    <td>2</td>
-    <td>66.66<small>%</small></td>
+    <td>N/A</td>
+    <td>N/A<small>%</small></td>
     <td>{{unitbranch}}<small>%</small></td>
     <td>{{unitfunc}}<small>%</small></td>
     <td>{{unitline}}<small>%</small></td>
   </tr>
   <tr>
     <th>Stochastic</th>
-    <td>1</td>
-    <td>66.66<small>%</small></td>
+    <td>N/A</td>
+    <td>N/A<small>%</small></td>
     <td>{{stochbranch}}<small>%</small></td>
     <td>{{stochfunc}}<small>%</small></td>
     <td>{{stochline}}<small>%</small></td>
@@ -56,12 +86,12 @@ TODO Put the project description here, please.
   </tr>
 </table>
 
-* [Site](https://stonecypher.github.io/react_ts_with_claude_gh_template/index.html)
-* [Documentation](https://stonecypher.github.io/react_ts_with_claude_gh_template/docs/index.html)
-* [Builds](https://www.github.com/stonecypher/react_ts_with_claude_gh_template/actions)
-* [Source](https://www.github.com/stonecypher/react_ts_with_claude_gh_template/)
+* [Site](https://stonecypher.github.io/issue_labels/index.html)
+* [Documentation](https://stonecypher.github.io/issue_labels/docs/index.html)
+* [Builds](https://www.github.com/stonecypher/issue_labels/actions)
+* [Source](https://www.github.com/stonecypher/issue_labels/)
 
-<img alt="star_chart" src="https://starchart.cc/StoneCypher/react_ts_with_claude_gh_template.svg" />
+<img alt="star_chart" src="https://starchart.cc/StoneCypher/issue_labels.svg" />
 
 <table>
   <tr>
@@ -73,63 +103,3 @@ TODO Put the project description here, please.
     <td><img alt="flamegraph visualization" src="bundle_flamegraph.png" /></td>
   </tr>
 </table>
-
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## How to use this template
-
-
-
-&nbsp;
-
-### Before invoking it
-
-1. [ ] Decide whether to
-    1. Update the deps in the template ***recommended***
-    1. Update the deps post-install
-    1. Let the deps be out of date
-
-
-
-&nbsp;
-
-### After invoking it
-
-1. [ ] Reset package version
-1. [ ] Turn Github Pages on, and point it at `master`/`/docs`
-1. [ ] Set up the auth token `TODO_TOKEN_FOR_GH_CI_CD` after renaming it in ci.yml
-1. [ ] Change all the `react_ts_with_claude_gh_template`s in this file's top block links
-1. [ ] Change all the `react_ts_with_claude_gh_template`s in `package.json`
-1. [ ] Change the `react_ts_with_claude_gh_template` in `verify_version_bump.js`
-1. [ ] Write or copy-paste the description in `package.json`
-1. [ ] Search for all remaining TODOs
-1. [ ] Update meta tags and TODOs in `src/html/index.html`
-1. [ ] Write a `base-README.md`
-1. [ ] Change all the `react_ts_with_claude_gh_template`s in `rollup.config.js`
-1. [ ] Decide whether to
-    1. re-add a `bin` block to `package.json`, or
-    2. remove the `bin` config from `rollup.config.js`
-1. [ ] `npm install && npm run build`
-    1. Maybe update the deps?
-1. Handle the MAYBE-REMOVEs in the HTML HEAD
-    1. [ ] Change src/html/index.html 's <title>
-    1. [ ] Maybe replace src/html/favicon.png
-1. [ ] commit and vroom
-
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## License
-
-MIT

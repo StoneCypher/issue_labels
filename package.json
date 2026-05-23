@@ -1,18 +1,18 @@
 {
-  "name": "react_ts_with_claude_gh_template",
-  "version": "0.20.2",
-  "description": "react_ts_with_claude_gh_template",
+  "name": "issue_labels",
+  "version": "0.1.0",
+  "description": "issue_labels",
   "keywords": [
-    "react_ts_with_claude_gh_template",
+    "issue_labels",
     "stonecypher"
   ],
-  "homepage": "https://github.com/StoneCypher/react_ts_with_claude_gh_template#readme",
+  "homepage": "https://github.com/StoneCypher/issue_labels#readme",
   "bugs": {
-    "url": "https://github.com/StoneCypher/react_ts_with_claude_gh_template/issues"
+    "url": "https://github.com/StoneCypher/issue_labels/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StoneCypher/react_ts_with_claude_gh_template.git"
+    "url": "git+https://github.com/StoneCypher/issue_labels.git"
   },
   "license": "MIT",
   "author": "John Haugeland <stonecypher@gmail.com>",
@@ -57,7 +57,10 @@
     "cloc": "node src/build_js/run_cloc.js && node ./src/build_js/cloc_report.cjs",
     "changelog": "rm -f CHANGELOG.md && rm -f CHANGELOG.long.md && rm -f ./src/doc_md/CHANGELOG.md && rm -f ./src/doc_md/CHANGELOG.long.md && better_git_changelog -b && cp CHANGELOG.* ./src/doc_md/",
     "build": "node src/build_js/run_build.js",
-    "ci": "echo starting && node -e \"console.log(new Date().toLocaleString())\" && npm run build && echo finishing && node -e \"console.log(new Date().toLocaleString())\""
+    "ci": "echo starting && node -e \"console.log(new Date().toLocaleString())\" && npm run build && echo finishing && node -e \"console.log(new Date().toLocaleString())\"",
+    "viz": "node src/build_js/assign_label_colors.cjs && node src/build_js/visualize_colors_3d.cjs",
+    "viz:html": "node src/build_js/visualize_colors_3d.cjs",
+    "bake": "node src/build_js/bake_colors.cjs"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
@@ -87,6 +90,7 @@
     "rollup-plugin-visualizer": "^7.0.1",
     "servehere": "^1.10.1",
     "terser": "^5.46.1",
+    "three": "^0.184.0",
     "typedoc": "^0.28.18",
     "typedoc-plugin-coverage": "^4.0.2",
     "typescript": "^5.9.3",

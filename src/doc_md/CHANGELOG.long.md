@@ -24,13 +24,13 @@ Published tags:
 
 ## [Untagged] - May 22, 2026 12:15:35 PM
 
-Commit [a1d8a28c0c7eac36aa98f27ae3b3332a9c2cf5a0](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/a1d8a28c0c7eac36aa98f27ae3b3332a9c2cf5a0)
+Commit [a1d8a28c0c7eac36aa98f27ae3b3332a9c2cf5a0](https://github.com/StoneCypher/issue_labels/commit/a1d8a28c0c7eac36aa98f27ae3b3332a9c2cf5a0)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
   * ci: gate verify-version-bump against the template repo; bump to 0.20.1 (#33)
   * The verify-version-bump CI job runs verify_version_bump.cjs, which
-calls `npm view react_ts_with_claude_gh_template version` to compare
+calls `npm view issue_labels version` to compare
 the local version against the published version. The template package
 isn't published, so npm view returns nothing valid and the job exits
 non-zero on every CI run for this template repo.
@@ -56,13 +56,13 @@ package name.
 
 ## [Untagged] - May 22, 2026 12:15:07 PM
 
-Commit [a628506200be6df94e7dbed309b6ad8452d28655](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/a628506200be6df94e7dbed309b6ad8452d28655)
+Commit [a628506200be6df94e7dbed309b6ad8452d28655](https://github.com/StoneCypher/issue_labels/commit/a628506200be6df94e7dbed309b6ad8452d28655)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
   * ci: gate verify-version-bump against the template repo; bump to 0.20.1
   * The verify-version-bump CI job runs verify_version_bump.cjs, which
-calls `npm view react_ts_with_claude_gh_template version` to compare
+calls `npm view issue_labels version` to compare
 the local version against the published version. The template package
 isn't published, so npm view returns nothing valid and the job exits
 non-zero on every CI run for this template repo.
@@ -88,7 +88,7 @@ package name.
 
 ## [Untagged] - May 22, 2026 11:57:40 AM
 
-Commit [340341aab5cee0cbc92da0fbf88eeb4f2ea2598a](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/340341aab5cee0cbc92da0fbf88eeb4f2ea2598a)
+Commit [340341aab5cee0cbc92da0fbf88eeb4f2ea2598a](https://github.com/StoneCypher/issue_labels/commit/340341aab5cee0cbc92da0fbf88eeb4f2ea2598a)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -115,7 +115,7 @@ to zero.
 
 ## [Untagged] - May 22, 2026 11:57:13 AM
 
-Commit [f2cede56d4d12e238c97bd7027bd4140a65c8474](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/f2cede56d4d12e238c97bd7027bd4140a65c8474)
+Commit [f2cede56d4d12e238c97bd7027bd4140a65c8474](https://github.com/StoneCypher/issue_labels/commit/f2cede56d4d12e238c97bd7027bd4140a65c8474)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -142,7 +142,7 @@ to zero.
 
 ## [Untagged] - May 22, 2026 2:01:41 AM
 
-Commit [20a9c106a021b1f837f8fc3770a117caf73ae6e6](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/20a9c106a021b1f837f8fc3770a117caf73ae6e6)
+Commit [20a9c106a021b1f837f8fc3770a117caf73ae6e6](https://github.com/StoneCypher/issue_labels/commit/20a9c106a021b1f837f8fc3770a117caf73ae6e6)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -184,7 +184,7 @@ already parallelized their respective steps internally.
 
 ## [Untagged] - May 22, 2026 2:00:45 AM
 
-Commit [5d98dc600c6391fdd548f12b235e0624a5b8886d](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/5d98dc600c6391fdd548f12b235e0624a5b8886d)
+Commit [5d98dc600c6391fdd548f12b235e0624a5b8886d](https://github.com/StoneCypher/issue_labels/commit/5d98dc600c6391fdd548f12b235e0624a5b8886d)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -226,7 +226,7 @@ already parallelized their respective steps internally.
 
 ## [Untagged] - May 22, 2026 1:57:13 AM
 
-Commit [3ab61405a5e42d110ff78565eeca923a6cd06646](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/3ab61405a5e42d110ff78565eeca923a6cd06646)
+Commit [3ab61405a5e42d110ff78565eeca923a6cd06646](https://github.com/StoneCypher/issue_labels/commit/3ab61405a5e42d110ff78565eeca923a6cd06646)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -255,7 +255,7 @@ parallel-stages PR can put into a single concurrent stage.
 
 ## [Untagged] - May 22, 2026 1:56:22 AM
 
-Commit [35fddbfc1b4f7e04c9a79f4dc2ea4f39bf747d68](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/35fddbfc1b4f7e04c9a79f4dc2ea4f39bf747d68)
+Commit [35fddbfc1b4f7e04c9a79f4dc2ea4f39bf747d68](https://github.com/StoneCypher/issue_labels/commit/35fddbfc1b4f7e04c9a79f4dc2ea4f39bf747d68)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -284,7 +284,7 @@ parallel-stages PR can put into a single concurrent stage.
 
 ## [Untagged] - May 22, 2026 1:52:33 AM
 
-Commit [9b93c871b183a14d400c8f4a02ed67627a3952b8](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/9b93c871b183a14d400c8f4a02ed67627a3952b8)
+Commit [9b93c871b183a14d400c8f4a02ed67627a3952b8](https://github.com/StoneCypher/issue_labels/commit/9b93c871b183a14d400c8f4a02ed67627a3952b8)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -316,7 +316,7 @@ ctsphase config.
 
 ## [Untagged] - May 22, 2026 1:51:40 AM
 
-Commit [bd107d7234218e20906d5892063e109041b988f2](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/bd107d7234218e20906d5892063e109041b988f2)
+Commit [bd107d7234218e20906d5892063e109041b988f2](https://github.com/StoneCypher/issue_labels/commit/bd107d7234218e20906d5892063e109041b988f2)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -348,7 +348,7 @@ ctsphase config.
 
 ## [Untagged] - May 22, 2026 1:45:52 AM
 
-Commit [21e62010af8cdee03cb2038776125a8f072baea6](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/21e62010af8cdee03cb2038776125a8f072baea6)
+Commit [21e62010af8cdee03cb2038776125a8f072baea6](https://github.com/StoneCypher/issue_labels/commit/21e62010af8cdee03cb2038776125a8f072baea6)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -374,7 +374,7 @@ startup cost instead of four-sequential or four-parallel.
 
 ## [Untagged] - May 22, 2026 1:45:01 AM
 
-Commit [ea481ec0b1c5b5d3a1ef6c7c4adbc7515cb4b5bc](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/ea481ec0b1c5b5d3a1ef6c7c4adbc7515cb4b5bc)
+Commit [ea481ec0b1c5b5d3a1ef6c7c4adbc7515cb4b5bc](https://github.com/StoneCypher/issue_labels/commit/ea481ec0b1c5b5d3a1ef6c7c4adbc7515cb4b5bc)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -400,7 +400,7 @@ startup cost instead of four-sequential or four-parallel.
 
 ## [Untagged] - May 22, 2026 1:42:06 AM
 
-Commit [aa0f72e8e40d593707a38448b8871d61138be0e9](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/aa0f72e8e40d593707a38448b8871d61138be0e9)
+Commit [aa0f72e8e40d593707a38448b8871d61138be0e9](https://github.com/StoneCypher/issue_labels/commit/aa0f72e8e40d593707a38448b8871d61138be0e9)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -425,7 +425,7 @@ shell-emulation overhead.
 
 ## [Untagged] - May 22, 2026 1:41:14 AM
 
-Commit [67bef19b036b0570569d742b67a89cdf1eadc9c2](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/67bef19b036b0570569d742b67a89cdf1eadc9c2)
+Commit [67bef19b036b0570569d742b67a89cdf1eadc9c2](https://github.com/StoneCypher/issue_labels/commit/67bef19b036b0570569d742b67a89cdf1eadc9c2)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -450,7 +450,7 @@ shell-emulation overhead.
 
 ## [Untagged] - May 22, 2026 1:39:10 AM
 
-Commit [2ba9703373a39b8de3c917ea3ca4cddb47af66ae](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/2ba9703373a39b8de3c917ea3ca4cddb47af66ae)
+Commit [2ba9703373a39b8de3c917ea3ca4cddb47af66ae](https://github.com/StoneCypher/issue_labels/commit/2ba9703373a39b8de3c917ea3ca4cddb47af66ae)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -476,7 +476,7 @@ CVE-2024-27980 mitigation.
 
 ## [Untagged] - May 22, 2026 1:38:15 AM
 
-Commit [8a10966534a8b78ec962aef1a122b81374f632b1](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/8a10966534a8b78ec962aef1a122b81374f632b1)
+Commit [8a10966534a8b78ec962aef1a122b81374f632b1](https://github.com/StoneCypher/issue_labels/commit/8a10966534a8b78ec962aef1a122b81374f632b1)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -502,7 +502,7 @@ CVE-2024-27980 mitigation.
 
 ## [Untagged] - May 22, 2026 1:33:24 AM
 
-Commit [e3450790e8c76c6a3b7770fcc885709796f5a37e](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/e3450790e8c76c6a3b7770fcc885709796f5a37e)
+Commit [e3450790e8c76c6a3b7770fcc885709796f5a37e](https://github.com/StoneCypher/issue_labels/commit/e3450790e8c76c6a3b7770fcc885709796f5a37e)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -536,7 +536,7 @@ path produces functionally identical but byte-different output
 
 ## [Untagged] - May 22, 2026 1:32:49 AM
 
-Commit [0a0e3e79e406dc4638a0ef02f07f313557e6753c](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/0a0e3e79e406dc4638a0ef02f07f313557e6753c)
+Commit [0a0e3e79e406dc4638a0ef02f07f313557e6753c](https://github.com/StoneCypher/issue_labels/commit/0a0e3e79e406dc4638a0ef02f07f313557e6753c)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -557,7 +557,7 @@ path produces functionally identical but byte-different output
 
 ## [Untagged] - May 22, 2026 1:30:08 AM
 
-Commit [4803ec3dbf434490fc99beb0dac89822fb74c5c6](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/4803ec3dbf434490fc99beb0dac89822fb74c5c6)
+Commit [4803ec3dbf434490fc99beb0dac89822fb74c5c6](https://github.com/StoneCypher/issue_labels/commit/4803ec3dbf434490fc99beb0dac89822fb74c5c6)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -583,7 +583,7 @@ script after the parallel step.
 
 ## [Untagged] - May 22, 2026 1:27:59 AM
 
-Commit [40e531331b79192f1afa43d96979de43147b4a05](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/40e531331b79192f1afa43d96979de43147b4a05)
+Commit [40e531331b79192f1afa43d96979de43147b4a05](https://github.com/StoneCypher/issue_labels/commit/40e531331b79192f1afa43d96979de43147b4a05)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -609,7 +609,7 @@ docs/docs/ are preserved in the npm script after the parallel step.
 
 ## [Untagged] - May 22, 2026 1:27:03 AM
 
-Commit [d83fbb7e596bcf03208683c23f7b25c186aa7302](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/d83fbb7e596bcf03208683c23f7b25c186aa7302)
+Commit [d83fbb7e596bcf03208683c23f7b25c186aa7302](https://github.com/StoneCypher/issue_labels/commit/d83fbb7e596bcf03208683c23f7b25c186aa7302)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -635,7 +635,7 @@ docs/docs/ are preserved in the npm script after the parallel step.
 
 ## [Untagged] - May 22, 2026 1:11:17 AM
 
-Commit [6e3db7f7ccf0df58a04ff0620c10998f325093b4](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/6e3db7f7ccf0df58a04ff0620c10998f325093b4)
+Commit [6e3db7f7ccf0df58a04ff0620c10998f325093b4](https://github.com/StoneCypher/issue_labels/commit/6e3db7f7ccf0df58a04ff0620c10998f325093b4)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -655,7 +655,7 @@ version so future installs cannot fall back to older 1.6.x releases.
 
 ## [Untagged] - May 22, 2026 1:05:59 AM
 
-Commit [bbbc26f4f5d5c3e3a0716024a03fd8883875d6e2](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/bbbc26f4f5d5c3e3a0716024a03fd8883875d6e2)
+Commit [bbbc26f4f5d5c3e3a0716024a03fd8883875d6e2](https://github.com/StoneCypher/issue_labels/commit/bbbc26f4f5d5c3e3a0716024a03fd8883875d6e2)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -675,7 +675,7 @@ version so future installs cannot fall back to older 1.6.x releases.
 
 ## [Untagged] - May 22, 2026 1:00:03 AM
 
-Commit [fba8d63fc796fe07e3752e5b5f314969f8920db2](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/fba8d63fc796fe07e3752e5b5f314969f8920db2)
+Commit [fba8d63fc796fe07e3752e5b5f314969f8920db2](https://github.com/StoneCypher/issue_labels/commit/fba8d63fc796fe07e3752e5b5f314969f8920db2)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -702,7 +702,7 @@ forthcoming perf PR series starts from a clean main:
 
 ## [Untagged] - May 22, 2026 12:57:34 AM
 
-Commit [4e08d00e74454570b4e5742e505043a93dbb1283](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/4e08d00e74454570b4e5742e505043a93dbb1283)
+Commit [4e08d00e74454570b4e5742e505043a93dbb1283](https://github.com/StoneCypher/issue_labels/commit/4e08d00e74454570b4e5742e505043a93dbb1283)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -729,7 +729,7 @@ forthcoming perf PR series starts from a clean main:
 
 ## [Untagged] - Mar 29, 2026 9:58:35 PM
 
-Commit [392cb49441ef2b774ce648e6792fe87ceeafe49a](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/392cb49441ef2b774ce648e6792fe87ceeafe49a)
+Commit [392cb49441ef2b774ce648e6792fe87ceeafe49a](https://github.com/StoneCypher/issue_labels/commit/392cb49441ef2b774ce648e6792fe87ceeafe49a)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -744,7 +744,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 29, 2026 9:51:31 PM
 
-Commit [004e224cfdac1d0ed2893e9a3881aee62e5a53be](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/004e224cfdac1d0ed2893e9a3881aee62e5a53be)
+Commit [004e224cfdac1d0ed2893e9a3881aee62e5a53be](https://github.com/StoneCypher/issue_labels/commit/004e224cfdac1d0ed2893e9a3881aee62e5a53be)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -763,7 +763,7 @@ project identity.
 
 ## [Untagged] - Mar 29, 2026 9:51:31 PM
 
-Commit [b52f2e9a9ccdfc07a67bb62219e04ffd65f0c8e1](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/b52f2e9a9ccdfc07a67bb62219e04ffd65f0c8e1)
+Commit [b52f2e9a9ccdfc07a67bb62219e04ffd65f0c8e1](https://github.com/StoneCypher/issue_labels/commit/b52f2e9a9ccdfc07a67bb62219e04ffd65f0c8e1)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -782,7 +782,7 @@ project identity.
 
 ## [Untagged] - Mar 29, 2026 9:30:17 PM
 
-Commit [412798bfad44e174ad1716c9755ce920999e0b41](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/412798bfad44e174ad1716c9755ce920999e0b41)
+Commit [412798bfad44e174ad1716c9755ce920999e0b41](https://github.com/StoneCypher/issue_labels/commit/412798bfad44e174ad1716c9755ce920999e0b41)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -802,7 +802,7 @@ sorting, canary releases).
 
 ## [Untagged] - Mar 29, 2026 9:30:17 PM
 
-Commit [45fba51d416798b345726174215f0add48bfa860](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/45fba51d416798b345726174215f0add48bfa860)
+Commit [45fba51d416798b345726174215f0add48bfa860](https://github.com/StoneCypher/issue_labels/commit/45fba51d416798b345726174215f0add48bfa860)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -822,7 +822,7 @@ sorting, canary releases).
 
 ## [Untagged] - Mar 29, 2026 9:04:18 PM
 
-Commit [9f34069c7f9b7bc46252bc10f39c46aa7c67731c](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/9f34069c7f9b7bc46252bc10f39c46aa7c67731c)
+Commit [9f34069c7f9b7bc46252bc10f39c46aa7c67731c](https://github.com/StoneCypher/issue_labels/commit/9f34069c7f9b7bc46252bc10f39c46aa7c67731c)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -843,7 +843,7 @@ Stryker's sandbox.
 
 ## [Untagged] - Mar 29, 2026 8:12:00 PM
 
-Commit [8216ee8923537af4849fee595662f255569b8681](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/8216ee8923537af4849fee595662f255569b8681)
+Commit [8216ee8923537af4849fee595662f255569b8681](https://github.com/StoneCypher/issue_labels/commit/8216ee8923537af4849fee595662f255569b8681)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -865,7 +865,7 @@ reference mutat tests.
 
 ## [Untagged] - Mar 29, 2026 6:13:03 PM
 
-Commit [1d6310ab8447641a55ab42f176f863ed957152aa](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/1d6310ab8447641a55ab42f176f863ed957152aa)
+Commit [1d6310ab8447641a55ab42f176f863ed957152aa](https://github.com/StoneCypher/issue_labels/commit/1d6310ab8447641a55ab42f176f863ed957152aa)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -880,7 +880,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 29, 2026 6:04:29 PM
 
-Commit [4472bddfec5752690508cdf4ceff862c37d37a38](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/4472bddfec5752690508cdf4ceff862c37d37a38)
+Commit [4472bddfec5752690508cdf4ceff862c37d37a38](https://github.com/StoneCypher/issue_labels/commit/4472bddfec5752690508cdf4ceff862c37d37a38)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -900,7 +900,7 @@ and issue tracker references for secret detection and provenance.
 
 ## [Untagged] - Mar 29, 2026 5:45:02 PM
 
-Commit [0f6c2dfd3a223a74d5b864e32c1c5b185b3cc860](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/0f6c2dfd3a223a74d5b864e32c1c5b185b3cc860)
+Commit [0f6c2dfd3a223a74d5b864e32c1c5b185b3cc860](https://github.com/StoneCypher/issue_labels/commit/0f6c2dfd3a223a74d5b864e32c1c5b185b3cc860)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -915,7 +915,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 29, 2026 5:21:32 PM
 
-Commit [bf31e01cdb288064dda0d27e2a296e62c337f682](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/bf31e01cdb288064dda0d27e2a296e62c337f682)
+Commit [bf31e01cdb288064dda0d27e2a296e62c337f682](https://github.com/StoneCypher/issue_labels/commit/bf31e01cdb288064dda0d27e2a296e62c337f682)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -934,7 +934,7 @@ build pipeline. Update tasklist with completed and declined items.
 
 ## [Untagged] - Mar 29, 2026 4:38:03 PM
 
-Commit [a7b5b5df2a49a4ec63b872806266bb594e55d4c8](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/a7b5b5df2a49a4ec63b872806266bb594e55d4c8)
+Commit [a7b5b5df2a49a4ec63b872806266bb594e55d4c8](https://github.com/StoneCypher/issue_labels/commit/a7b5b5df2a49a4ec63b872806266bb594e55d4c8)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -952,7 +952,7 @@ it overrides regardless of source order.
 
 ## [Untagged] - Mar 29, 2026 4:23:53 PM
 
-Commit [1c9e629c4f7b650ee09131dedfd0ce1319be783f](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/1c9e629c4f7b650ee09131dedfd0ce1319be783f)
+Commit [1c9e629c4f7b650ee09131dedfd0ce1319be783f](https://github.com/StoneCypher/issue_labels/commit/1c9e629c4f7b650ee09131dedfd0ce1319be783f)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -974,7 +974,7 @@ src/superpowers/spec/ to survive build clean.
 
 ## [Untagged] - Mar 29, 2026 4:23:53 PM
 
-Commit [7f65289967137294d05030571cf0a05cf4bc25b0](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/7f65289967137294d05030571cf0a05cf4bc25b0)
+Commit [7f65289967137294d05030571cf0a05cf4bc25b0](https://github.com/StoneCypher/issue_labels/commit/7f65289967137294d05030571cf0a05cf4bc25b0)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -996,7 +996,7 @@ src/superpowers/spec/ to survive build clean.
 
 ## [Untagged] - Mar 29, 2026 3:33:08 PM
 
-Commit [ce3005d2922fe11d239eb412d72a087922adcbc7](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/ce3005d2922fe11d239eb412d72a087922adcbc7)
+Commit [ce3005d2922fe11d239eb412d72a087922adcbc7](https://github.com/StoneCypher/issue_labels/commit/ce3005d2922fe11d239eb412d72a087922adcbc7)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1016,7 +1016,7 @@ items using strikethrough notation and completed items.
 
 ## [Untagged] - Mar 29, 2026 3:07:00 PM
 
-Commit [e2389d9c208565b0560887fed41233976e30326a](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/e2389d9c208565b0560887fed41233976e30326a)
+Commit [e2389d9c208565b0560887fed41233976e30326a](https://github.com/StoneCypher/issue_labels/commit/e2389d9c208565b0560887fed41233976e30326a)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1036,7 +1036,7 @@ Use strikethrough for declined tasklist items.
 
 ## [Untagged] - Mar 29, 2026 1:56:54 PM
 
-Commit [38b26ec1d2df7d207e751eab2efe88f15a0f4ac8](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/38b26ec1d2df7d207e751eab2efe88f15a0f4ac8)
+Commit [38b26ec1d2df7d207e751eab2efe88f15a0f4ac8](https://github.com/StoneCypher/issue_labels/commit/38b26ec1d2df7d207e751eab2efe88f15a0f4ac8)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1073,7 +1073,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 29, 2026 1:56:54 PM
 
-Commit [9bb53d6f2157fc1f500d0f0bfbcaf7a5c9e3b411](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/9bb53d6f2157fc1f500d0f0bfbcaf7a5c9e3b411)
+Commit [9bb53d6f2157fc1f500d0f0bfbcaf7a5c9e3b411](https://github.com/StoneCypher/issue_labels/commit/9bb53d6f2157fc1f500d0f0bfbcaf7a5c9e3b411)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1110,7 +1110,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 29, 2026 1:41:40 PM
 
-Commit [e18a9a3a6db991056da0c7bda2aa637079290109](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/e18a9a3a6db991056da0c7bda2aa637079290109)
+Commit [e18a9a3a6db991056da0c7bda2aa637079290109](https://github.com/StoneCypher/issue_labels/commit/e18a9a3a6db991056da0c7bda2aa637079290109)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1142,7 +1142,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 29, 2026 12:05:11 PM
 
-Commit [82ee255248b39fc4ba673590672ff671842ff350](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/82ee255248b39fc4ba673590672ff671842ff350)
+Commit [82ee255248b39fc4ba673590672ff671842ff350](https://github.com/StoneCypher/issue_labels/commit/82ee255248b39fc4ba673590672ff671842ff350)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1157,7 +1157,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 29, 2026 11:45:41 AM
 
-Commit [2a02078412384b11fdad36a3f410ccf769de2584](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/2a02078412384b11fdad36a3f410ccf769de2584)
+Commit [2a02078412384b11fdad36a3f410ccf769de2584](https://github.com/StoneCypher/issue_labels/commit/2a02078412384b11fdad36a3f410ccf769de2584)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1191,7 +1191,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 29, 2026 11:45:41 AM
 
-Commit [fc63d8c07df0d521cdb531b64b627bb8c1ae98bf](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/fc63d8c07df0d521cdb531b64b627bb8c1ae98bf)
+Commit [fc63d8c07df0d521cdb531b64b627bb8c1ae98bf](https://github.com/StoneCypher/issue_labels/commit/fc63d8c07df0d521cdb531b64b627bb8c1ae98bf)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1225,7 +1225,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 29, 2026 8:45:09 AM
 
-Commit [cb1204858713ec111b3a9c68604eb70d6262df4c](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/cb1204858713ec111b3a9c68604eb70d6262df4c)
+Commit [cb1204858713ec111b3a9c68604eb70d6262df4c](https://github.com/StoneCypher/issue_labels/commit/cb1204858713ec111b3a9c68604eb70d6262df4c)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1240,7 +1240,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 11:41:54 AM
 
-Commit [688480395874eb33bdedfd95401e52fb30e32a7f](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/688480395874eb33bdedfd95401e52fb30e32a7f)
+Commit [688480395874eb33bdedfd95401e52fb30e32a7f](https://github.com/StoneCypher/issue_labels/commit/688480395874eb33bdedfd95401e52fb30e32a7f)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1255,7 +1255,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 11:32:50 AM
 
-Commit [1127b3c2019f1b607ae8956c9ce591b54a4997bc](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/1127b3c2019f1b607ae8956c9ce591b54a4997bc)
+Commit [1127b3c2019f1b607ae8956c9ce591b54a4997bc](https://github.com/StoneCypher/issue_labels/commit/1127b3c2019f1b607ae8956c9ce591b54a4997bc)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1281,7 +1281,7 @@ globals into browser-side code.
 
 ## [Untagged] - Mar 20, 2026 11:22:00 AM
 
-Commit [cea494f95ddfff097a554e18f679448a771197e6](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/cea494f95ddfff097a554e18f679448a771197e6)
+Commit [cea494f95ddfff097a554e18f679448a771197e6](https://github.com/StoneCypher/issue_labels/commit/cea494f95ddfff097a554e18f679448a771197e6)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1296,7 +1296,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 11:18:42 AM
 
-Commit [16af19ae2b2e45f6f886fcae6f3ca8cf54ba3fd3](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/16af19ae2b2e45f6f886fcae6f3ca8cf54ba3fd3)
+Commit [16af19ae2b2e45f6f886fcae6f3ca8cf54ba3fd3](https://github.com/StoneCypher/issue_labels/commit/16af19ae2b2e45f6f886fcae6f3ca8cf54ba3fd3)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1311,7 +1311,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 11:13:04 AM
 
-Commit [5976e667a284cfff859a9e81bce422a30b667d3e](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/5976e667a284cfff859a9e81bce422a30b667d3e)
+Commit [5976e667a284cfff859a9e81bce422a30b667d3e](https://github.com/StoneCypher/issue_labels/commit/5976e667a284cfff859a9e81bce422a30b667d3e)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1326,7 +1326,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 11:08:18 AM
 
-Commit [cda0bf54b8f8be022a555d74c9ce0dacc2d51f08](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/cda0bf54b8f8be022a555d74c9ce0dacc2d51f08)
+Commit [cda0bf54b8f8be022a555d74c9ce0dacc2d51f08](https://github.com/StoneCypher/issue_labels/commit/cda0bf54b8f8be022a555d74c9ce0dacc2d51f08)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1341,7 +1341,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 11:07:14 AM
 
-Commit [61e38c9bf828bc6dd58a68146645b77d664557a1](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/61e38c9bf828bc6dd58a68146645b77d664557a1)
+Commit [61e38c9bf828bc6dd58a68146645b77d664557a1](https://github.com/StoneCypher/issue_labels/commit/61e38c9bf828bc6dd58a68146645b77d664557a1)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1356,7 +1356,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 10:29:45 AM
 
-Commit [01e787bd8e5aa7c4a23c23b925ec5d77253beb5a](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/01e787bd8e5aa7c4a23c23b925ec5d77253beb5a)
+Commit [01e787bd8e5aa7c4a23c23b925ec5d77253beb5a](https://github.com/StoneCypher/issue_labels/commit/01e787bd8e5aa7c4a23c23b925ec5d77253beb5a)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1371,7 +1371,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 10:27:50 AM
 
-Commit [052b159ed9f00f696888b9406df4a8eb89c1b7a2](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/052b159ed9f00f696888b9406df4a8eb89c1b7a2)
+Commit [052b159ed9f00f696888b9406df4a8eb89c1b7a2](https://github.com/StoneCypher/issue_labels/commit/052b159ed9f00f696888b9406df4a8eb89c1b7a2)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1386,7 +1386,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 10:11:09 AM
 
-Commit [cd1d52fd9804c9642260296e77d49398cf053851](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/cd1d52fd9804c9642260296e77d49398cf053851)
+Commit [cd1d52fd9804c9642260296e77d49398cf053851](https://github.com/StoneCypher/issue_labels/commit/cd1d52fd9804c9642260296e77d49398cf053851)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1401,7 +1401,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 9:56:41 AM
 
-Commit [904c5757e884f0c0e013879f473ea01e3d4439d1](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/904c5757e884f0c0e013879f473ea01e3d4439d1)
+Commit [904c5757e884f0c0e013879f473ea01e3d4439d1](https://github.com/StoneCypher/issue_labels/commit/904c5757e884f0c0e013879f473ea01e3d4439d1)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1416,7 +1416,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 9:50:34 AM
 
-Commit [1aa12e667e9e64b025b9bf0f70b88aa870c18779](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/1aa12e667e9e64b025b9bf0f70b88aa870c18779)
+Commit [1aa12e667e9e64b025b9bf0f70b88aa870c18779](https://github.com/StoneCypher/issue_labels/commit/1aa12e667e9e64b025b9bf0f70b88aa870c18779)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1431,7 +1431,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 8:24:47 AM
 
-Commit [f11ff2278b0118a98e1d5dc8b564384dd8f4c18e](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/f11ff2278b0118a98e1d5dc8b564384dd8f4c18e)
+Commit [f11ff2278b0118a98e1d5dc8b564384dd8f4c18e](https://github.com/StoneCypher/issue_labels/commit/f11ff2278b0118a98e1d5dc8b564384dd8f4c18e)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1446,7 +1446,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 8:04:55 AM
 
-Commit [a8364371009bbaab65f89007083a955b0ed3f577](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/a8364371009bbaab65f89007083a955b0ed3f577)
+Commit [a8364371009bbaab65f89007083a955b0ed3f577](https://github.com/StoneCypher/issue_labels/commit/a8364371009bbaab65f89007083a955b0ed3f577)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1461,7 +1461,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 7:45:00 AM
 
-Commit [68049ea5b05a946f7a89bf7e279e02968cf2afba](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/68049ea5b05a946f7a89bf7e279e02968cf2afba)
+Commit [68049ea5b05a946f7a89bf7e279e02968cf2afba](https://github.com/StoneCypher/issue_labels/commit/68049ea5b05a946f7a89bf7e279e02968cf2afba)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
@@ -1476,7 +1476,7 @@ Author: `John Haugeland <stonecypher@gmail.com>`
 
 ## [Untagged] - Mar 20, 2026 7:21:01 AM
 
-Commit [74c3b959ff458a041fcabf64863a76dac2fc928c](https://github.com/StoneCypher/react_ts_with_claude_gh_template/commit/74c3b959ff458a041fcabf64863a76dac2fc928c)
+Commit [74c3b959ff458a041fcabf64863a76dac2fc928c](https://github.com/StoneCypher/issue_labels/commit/74c3b959ff458a041fcabf64863a76dac2fc928c)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
