@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'react_ts_with_claude_gh_template',
+  name: 'issue_labels',
   readme: './README.md',
   out: 'docs/docs',
   plugin: [ 'typedoc-plugin-coverage' ],

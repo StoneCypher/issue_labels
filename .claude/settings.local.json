@@ -51,7 +51,12 @@
       "Bash(git commit *)",
       "Bash(git push *)",
       "Bash(git pull *)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(findstr issue *)",
+      "Bash(findstr /i \"label hand\")",
+      "Bash(node *)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npx better_git_changelog -b)"
     ]
   }
 }
