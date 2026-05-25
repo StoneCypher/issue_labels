@@ -56,7 +56,11 @@
       "Bash(findstr /i \"label hand\")",
       "Bash(node *)",
       "mcp__ide__getDiagnostics",
-      "Bash(npx better_git_changelog -b)"
+      "Bash(npx better_git_changelog -b)",
+      "Bash(npm install *)",
+      "Bash(git fetch *)",
+      "Bash(gh label *)",
+      "PowerShell(Get-Command *)"
     ]
   }
 }

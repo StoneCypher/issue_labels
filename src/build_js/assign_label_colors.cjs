@@ -46,6 +46,13 @@ function clampCube([r, g, b]) {
 }
 
 
+/** Parses a #rrggbb hex string into an [r, g, b] triple of 0..1 floats. */
+function hexToRgb(h) {
+  const s = h.replace(/^#/, '');
+  return [s.slice(0, 2), s.slice(2, 4), s.slice(4, 6)].map(p => parseInt(p, 16) / 255);
+}
+
+
 /** Formats an sRGB triple (each 0..1) as `#rrggbb`. */
 function rgbToHex(p) {
   return '#' + p.map(v => Math.round(Math.max(0, Math.min(1, v)) * 255)
@@ -89,8 +96,18 @@ function main() {
 
   // colour pinning: pin[i] is [r, g, b], each entry a fixed value in 0..1 or
   // null. Pinned channels are held fixed; null channels are sim-driven.
-  const pin = labels.map(l => ['r', 'g', 'b'].map(c =>
-    l.pin && l.pin[c] !== undefined ? l.pin[c] / 255 : null));
+  // Three sources, in descending precedence: brand_color (logo/brand identity,
+  // full 3-channel hex), pin (gradient scales, per-channel 0..255 object),
+  // association (looser semantic cue, full 3-channel hex). Each is a separate
+  // field so the source-of-truth records WHY the colour is fixed.
+  const pin = labels.map(l => {
+    if (l.brand_color) { return hexToRgb(l.brand_color); }
+    if (l.pin) {
+      return ['r', 'g', 'b'].map(c => l.pin[c] !== undefined ? l.pin[c] / 255 : null);
+    }
+    if (l.association) { return hexToRgb(l.association); }
+    return [null, null, null];
+  });
 
   // a cluster is all-exempt (out of the grid) when every member is exempt
   const memberIdx = Array.from({ length: nClusters }, () => []);
@@ -196,6 +213,8 @@ function main() {
     o.color = l.color;
     if (l.exempt)        { o.exempt = l.exempt; }
     if (l.pin)           { o.pin = l.pin; }
+    if (l.brand_color)   { o.brand_color = l.brand_color; }
+    if (l.association)   { o.association = l.association; }
     if (l.core)          { o.core = l.core; }
     if (l.constellation) { o.constellation = l.constellation; }
     return ser(o);

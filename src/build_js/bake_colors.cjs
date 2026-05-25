@@ -48,6 +48,8 @@ const lines = labels.map(l => {
   if (l.color)         { o.color = l.color; }
   if (l.exempt)        { o.exempt = l.exempt; }
   if (l.pin)           { o.pin = l.pin; }
+  if (l.brand_color)   { o.brand_color = l.brand_color; }
+  if (l.association)   { o.association = l.association; }
   if (l.core)          { o.core = l.core; }
   if (l.constellation) { o.constellation = l.constellation; }
   return ser(o);

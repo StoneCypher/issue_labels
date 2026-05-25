@@ -52,13 +52,30 @@ const labelSub = labels.map(l => {
 const labelCat = labels.map(l => catId.get(l.category));
 const nameToIdx = new Map(labels.map((l, i) => [l.name, i]));
 
+// Pin source precedence (strongest first): brand_color > pin > association.
+// All three lock position; the distinct fields record WHY (brand identity,
+// gradient scale, or looser semantic association).
+const hexToRgb = h => {
+  const s = h.replace(/^#/, '');
+  return [s.slice(0, 2), s.slice(2, 4), s.slice(4, 6)].map(p => parseInt(p, 16) / 255);
+};
+const effectivePin = l => {
+  if (l.brand_color) { return hexToRgb(l.brand_color); }
+  if (l.pin) {
+    return ['r', 'g', 'b'].map(c => l.pin[c] !== undefined ? l.pin[c] / 255 : null);
+  }
+  if (l.association) { return hexToRgb(l.association); }
+  return [null, null, null];
+};
+
 const DATA = {
   labels: labels.map((l, i) => ({
     name: l.name,
     cat: labelCat[i],
     sub: labelSub[i],
     exempt: l.exempt === true,
-    pin: ['r', 'g', 'b'].map(c => l.pin && l.pin[c] !== undefined ? l.pin[c] / 255 : null),
+    pin: effectivePin(l),
+    seed: hexToRgb(l.color),
     con: l.constellation && nameToIdx.has(l.constellation) ? nameToIdx.get(l.constellation) : -1
   })),
   subs: subName.map((nm, s) => ({ name: nm, cat: subCat[s] })),
@@ -108,6 +125,16 @@ const HTML = `<!doctype html>
     text-shadow:0 0 4px #000,0 0 3px #000,0 0 2px #000;
     pointer-events:none;white-space:nowrap;opacity:.5;text-transform:uppercase;
     letter-spacing:.03em}
+  #list{position:fixed;left:14px;top:96px;background:#000a;padding:10px 12px;
+    border-radius:6px;z-index:2;width:320px;max-height:calc(100vh - 110px);
+    overflow-y:auto;column-count:2;column-gap:12px}
+  #list .item{display:flex;align-items:center;gap:6px;padding:1px 3px;
+    font-size:7.5px;line-height:1.5;border-radius:3px;cursor:default;
+    break-inside:avoid;color:#ddd}
+  #list .item:hover{background:#ffffff22;color:#fff}
+  #list .chip{display:inline-block;width:10px;height:10px;border-radius:2px;
+    flex:none;border:1px solid #ffffff33}
+  #list .lbl-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -116,6 +143,7 @@ const HTML = `<!doctype html>
   <span id="status"></span></div>
 <div id="ctrl"><h4>coefficients</h4></div>
 <div id="tip"></div>
+<div id="list"></div>
 <script type="importmap">
 { "imports": {
   "three": "./three/three.module.js",
@@ -128,7 +156,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 
 const DATA   = __DATA__;
-const LABELS = DATA.labels;        // [{name, cat, sub, exempt, pin:[r,g,b|null], con}]
+const LABELS = DATA.labels;        // [{name, cat, sub, exempt, pin:[r,g,b|null], seed:[r,g,b], con}]
 const SUBS   = DATA.subs;          // [{name, cat}]
 const CATS   = DATA.cats;          // [{name}]
 const N      = LABELS.length;
@@ -144,6 +172,8 @@ const labelCat = LABELS.map(l => l.cat);
 const labelSub = LABELS.map(l => l.sub);
 const exempt   = LABELS.map(l => l.exempt);
 const pinArr   = LABELS.map(l => l.pin);
+const seedArr  = LABELS.map(l => l.seed);
+const anchored = LABELS.map(l => l.pin.every(v => v !== null));
 
 const labelsOfSub = Array.from({ length: NS }, () => []);
 labelSub.forEach((s, i) => labelsOfSub[s].push(i));
@@ -163,12 +193,20 @@ const catCount = subsOfCat.map(ss => ss.reduce((n, s) => n + subCount[s], 0));
 
 const pos = new Array(N);
 const force = new Array(N);
+// seed unpinned channels from each label's baked .color so labels start near
+// their previous equilibrium -- visible startup motion then shows only the
+// genuine response to whatever has been changed since the last bake
 function seed() {
   for (let i = 0; i < N; i++) {
-    pos[i] = [0, 1, 2].map(k => pinArr[i][k] == null ? Math.random() : pinArr[i][k]);
+    pos[i] = [0, 1, 2].map(k => pinArr[i][k] == null ? seedArr[i][k] : pinArr[i][k]);
   }
 }
 seed();
+
+// "show only anchored" toggle: hide every label that has no pin / brand_color /
+// association, so the structure imposed by the anchored points is visible
+// without the noise of unanchored members drifting under cluster forces
+let onlyAnchored = false;
 
 // live coefficients, retuned by the sliders
 const P = {
@@ -444,6 +482,37 @@ cubeGeo.setAttribute('position', new THREE.Float32BufferAttribute(cubePos, 3));
 cubeGeo.setAttribute('color', new THREE.Float32BufferAttribute(cubeCol, 3));
 scene.add(new THREE.LineSegments(cubeGeo, new THREE.LineBasicMaterial({ vertexColors: true })));
 
+// inner half-size dotted cube spans 25%..75% on each RGB axis -- a static
+// reference for the muted middle region of the color cube. Each edge is a
+// vertex-color gradient between its two corners' actual RGB coordinates,
+// matching the outer cube's gradient styling.
+const innerCorners = [];
+for (const x of [0.25, 0.75]) {
+  for (const y of [0.25, 0.75]) {
+    for (const z of [0.25, 0.75]) { innerCorners.push([x, y, z]); }
+  }
+}
+const innerCubePos = [], innerCubeCol = [];
+for (let i = 0; i < 8; i++) {
+  for (let j = i + 1; j < 8; j++) {
+    const a = innerCorners[i], b = innerCorners[j];
+    const span = Math.abs(a[0]-b[0]) + Math.abs(a[1]-b[1]) + Math.abs(a[2]-b[2]);
+    if (Math.abs(span - 0.5) > 1e-9) { continue; }          // only edges, not diagonals
+    for (const c of [a, b]) {
+      innerCubePos.push((c[0]-0.5)*S, (c[1]-0.5)*S, (c[2]-0.5)*S);
+      innerCubeCol.push(c[0], c[1], c[2]);                  // each endpoint colored as its RGB coordinate
+    }
+  }
+}
+const innerCubeGeo = new THREE.BufferGeometry();
+innerCubeGeo.setAttribute('position', new THREE.Float32BufferAttribute(innerCubePos, 3));
+innerCubeGeo.setAttribute('color', new THREE.Float32BufferAttribute(innerCubeCol, 3));
+const innerCube = new THREE.LineSegments(innerCubeGeo,
+  new THREE.LineDashedMaterial({ vertexColors: true, dashSize: 1.5, gapSize: 2,
+    transparent: true, opacity: 0.7 }));
+innerCube.computeLineDistances();                           // required by LineDashedMaterial
+scene.add(innerCube);
+
 /** Builds a vertex-colored LineSegments with count segments. */
 function makeLines(count, opacity, order) {
   const geo = new THREE.BufferGeometry();
@@ -546,6 +615,25 @@ const catMarks = makeCatMarkers();
 catMarks.forEach((m, c) => { if (subsOfCat[c].length === 1) { m.visible = false; } });
 const pickTargets = dots.concat(subMarks, catMarks.filter(m => m.visible));
 
+// list-hover highlight: a billboarded bright-yellow ring that follows the
+// dot of whichever list item is currently being hovered. depthTest off and
+// a high renderOrder keep it readable even when the dot sits behind others.
+const ringCanvas = document.createElement('canvas');
+ringCanvas.width = 128; ringCanvas.height = 128;
+const ringCtx = ringCanvas.getContext('2d');
+ringCtx.strokeStyle = '#ffff20';
+ringCtx.lineWidth = 8;
+ringCtx.beginPath();
+ringCtx.arc(64, 64, 54, 0, Math.PI * 2);
+ringCtx.stroke();
+const ringSprite = new THREE.Sprite(new THREE.SpriteMaterial({
+  map: new THREE.CanvasTexture(ringCanvas),
+  color: 0xffff00, transparent: true, depthTest: false }));
+ringSprite.scale.set(14, 14, 1);
+ringSprite.visible = false;
+ringSprite.renderOrder = 1000;
+scene.add(ringSprite);
+
 // --- hover ------------------------------------------------------------------
 const ray = new THREE.Raycaster();
 const ndc = new THREE.Vector2();
@@ -555,8 +643,10 @@ tipSwatch.id = 'swatch';
 const tipText = document.createTextNode('');
 tip.append(tipSwatch, tipText);
 let focusSub = null, focusCat = null;
+let listHoverIdx = -1;                                      // active list-row idx, -1 if none
 
 addEventListener('pointermove', e => {
+  if (e.target.closest('#list')) { return; }   // list owns its own hover state
   ndc.x = (e.clientX / innerWidth) * 2 - 1;
   ndc.y = -(e.clientY / innerHeight) * 2 + 1;
   ray.setFromCamera(ndc, camera);
@@ -583,6 +673,54 @@ addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(innerWidth, innerHeight);
   labelRenderer.setSize(innerWidth, innerHeight);
+});
+
+// --- left-side alphabetical legend -----------------------------------------
+// Each item: a LIVE color chip + the label name. The chip's background is
+// rewritten in render() from the current pos[i], so the list tracks the
+// running sim. Hovering an item drives focusSub (same as hovering its dot in
+// 3D) and sets listHoverIdx, which makes the yellow billboard ring pop up
+// around the matching dot.
+const listEl = document.getElementById('list');
+const order = [...Array(N).keys()].sort((a, b) =>
+  LABELS[a].name.localeCompare(LABELS[b].name, undefined, { sensitivity: 'base' }));
+const chips = new Array(N);
+for (const i of order) {
+  const div = document.createElement('div');
+  div.className = 'item';
+  const chip = document.createElement('span');
+  chip.className = 'chip';
+  // initial color from baked seed; render() overwrites every frame
+  const sc = LABELS[i].seed;
+  chip.style.background = '#' + sc.map(v =>
+    Math.round(v * 255).toString(16).padStart(2, '0')).join('');
+  chips[i] = chip;
+  const nm = document.createElement('span');
+  nm.className = 'lbl-name';
+  nm.textContent = LABELS[i].name;
+  div.append(chip, nm);
+  div.addEventListener('pointerenter', e => {
+    focusSub = labelSub[i];
+    focusCat = null;
+    listHoverIdx = i;
+    tip.style.display = 'block';
+    tip.style.left = (e.clientX + 14) + 'px';
+    tip.style.top  = (e.clientY + 14) + 'px';
+    tipSwatch.style.background = chip.style.background;     // live: render() writes it
+    tipText.textContent = LABELS[i].name + '  ·  ' + CATS[LABELS[i].cat].name;
+  });
+  div.addEventListener('pointermove', e => {
+    tip.style.left = (e.clientX + 14) + 'px';
+    tip.style.top  = (e.clientY + 14) + 'px';
+  });
+  listEl.append(div);
+}
+// pointerleave on the container, not each item, so moving between adjacent
+// items doesn't flicker through a null focus state
+listEl.addEventListener('pointerleave', () => {
+  focusSub = null;
+  listHoverIdx = -1;
+  tip.style.display = 'none';
 });
 
 // --- controls panel ---------------------------------------------------------
@@ -673,7 +811,14 @@ exportBtn.addEventListener('click', async () => {
     if (w) { w.document.title = 'label colors'; w.document.body.innerText = text; }
   }
 });
-ctrl.append(reseedBtn, pauseBtn, resetAllBtn, exportBtn);
+const onlyAnchoredBtn = document.createElement('button');
+onlyAnchoredBtn.textContent = 'only anchored';
+onlyAnchoredBtn.title = 'show only labels with a pin, brand_color, or association';
+onlyAnchoredBtn.addEventListener('click', () => {
+  onlyAnchored = !onlyAnchored;
+  onlyAnchoredBtn.classList.toggle('on', onlyAnchored);
+});
+ctrl.append(reseedBtn, pauseBtn, resetAllBtn, exportBtn, onlyAnchoredBtn);
 
 // slow persistent spin of the whole scene
 const spinHdr = document.createElement('h4');
@@ -793,7 +938,19 @@ function render() {
   }
   for (let i = 0; i < N; i++) {
     const rgb = pos[i], sp = toScene(rgb[0], rgb[1], rgb[2]);
+    // live chip + dot position update -- always, regardless of suppression
+    // (the chip should track the sim even when its dot is hidden, and the
+    // ring sprite needs an up-to-date position when its label is suppressed)
+    chips[i].style.background = '#' + rgb.map(v =>
+      Math.round(Math.max(0, Math.min(1, v)) * 255).toString(16).padStart(2, '0')).join('');
     dots[i].position.set(...sp);
+    const suppressed = onlyAnchored && !anchored[i];
+    dots[i].visible = !suppressed;
+    dots[i].userData.div.style.display = suppressed ? 'none' : '';
+    if (suppressed) {
+      setSeg(dotGeoL, i, sp, sp, [0, 0, 0]);
+      continue;
+    }
     dots[i].material.color.setRGB(rgb[0], rgb[1], rgb[2], THREE.SRGBColorSpace);
     const foc = inFocus(i);
     dots[i].material.opacity = foc ? 1 : 0.45;
@@ -830,6 +987,13 @@ function render() {
   for (const g of [subCatGeo, dotGeoL, conGeoL]) {
     g.attributes.position.needsUpdate = true;
     g.attributes.color.needsUpdate = true;
+  }
+  // list-hover yellow ring follows the chosen dot (or hides when none)
+  if (listHoverIdx >= 0) {
+    ringSprite.visible = true;
+    ringSprite.position.copy(dots[listHoverIdx].position);
+  } else {
+    ringSprite.visible = false;
   }
   statusEl.textContent = 'step ' + steps + (running ? '' : '  (paused)');
 }
