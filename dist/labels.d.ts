@@ -22,12 +22,10 @@
  * one-off generator. The array is frozen-by-type (readonly) so consumers
  * can't mutate it accidentally.
  */
-interface Label {
+export interface Label {
     readonly name: string;
     readonly color: string;
     readonly description: string;
 }
-declare const labels: readonly Label[];
-
-export { labels };
-export type { Label };
+export declare const labels: readonly Label[];
+//# sourceMappingURL=labels.d.ts.map

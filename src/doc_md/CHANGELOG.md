@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-Changelogging the last 10 commits; Full changelog at [CHANGELOG.long.md](CHANGELOG.long.md)
+1 merge; Changelogging the last 10 commits; Full changelog at [CHANGELOG.long.md](CHANGELOG.long.md)
 
 
 
@@ -14,6 +14,66 @@ Published tags:
 
 
 
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - May 26, 2026 9:24:51 AM
+
+Commit [d056a0f518becb025c884dc867506c90e52844f9](https://github.com/StoneCypher/issue_labels/commit/d056a0f518becb025c884dc867506c90e52844f9)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+Merges [e3cbe76, afbbf00]
+
+  * Merge pull request #1 from StoneCypher/feat_26-05-26_saving-pin-and-prototype
+  * feat: add exaggerated/saving_pin pin sources, clear muted-center cube
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - May 26, 2026 9:21:34 AM
+
+Commit [afbbf00750c2087f70b5edb4e1d296bf85de46a9](https://github.com/StoneCypher/issue_labels/commit/afbbf00750c2087f70b5edb4e1d296bf85de46a9)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+  * feat: add exaggerated/saving_pin sources, clear muted-center cube
+  * Schema:
+- New pin sources with precedence
+  exaggerated > brand_color > pin > association > saving_pin
+- exaggerated: deliberate brand shift to escape crowded cube regions
+- saving_pin: lowest-priority rescue anchor for would-be center drifters
+  * Visualizer:
+- Live color chips in alphabetical left-side legend
+- Yellow billboard ring highlights the matching dot on list hover
+- Inner half-size dotted cube marks the 25-75% muted-center region with
+  edges gradient-colored to match the outer cube
+- "Only anchored" toggle hides unpinned dots so anchored structure is visible
+- Seed unpinned channels from each label's baked .color (was Math.random)
+  * Labels:
+- iOS to #007AFF, Unity to #222C37, Edge to #3CCBF4 (resolve black-corner
+  collision and Microsoft-blue collision)
+- Critical pin nudged darker/redder; Quality and Size ladders re-interpolated
+  with unknown folded into the gradient
+- Effort 1/5 stripped of green; missing set to per-channel ladder average
+- 7 brand-color exaggerations + 17 saving_pins lift inside-cube labels just
+  past the cube wall
+- New constellation chains for Effort (6 rungs) and the Quality ladder
+  (extended)
+  * Artifacts:
+- src/data/prototype.json: flat name+color+description list with all 286
+  labels outside the inner cube
+- docs/inner_cube_exaggerations.html, docs/drifted_exaggerations.html:
+  snapshot reports of inside-cube state
 
 
 
