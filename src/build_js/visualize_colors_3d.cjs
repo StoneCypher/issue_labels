@@ -52,19 +52,24 @@ const labelSub = labels.map(l => {
 const labelCat = labels.map(l => catId.get(l.category));
 const nameToIdx = new Map(labels.map((l, i) => [l.name, i]));
 
-// Pin source precedence (strongest first): brand_color > pin > association.
-// All three lock position; the distinct fields record WHY (brand identity,
-// gradient scale, or looser semantic association).
+// Pin source precedence (strongest first):
+//   exaggerated > brand_color > pin > association > saving_pin.
+// All five lock position; the distinct fields record WHY (deliberate shift to
+// break out of a crowded cube region, brand identity, gradient scale, looser
+// semantic association, or a sim-rescue anchor that captures where the label
+// would have drifted on its own but pushes it just outside the muted center).
 const hexToRgb = h => {
   const s = h.replace(/^#/, '');
   return [s.slice(0, 2), s.slice(2, 4), s.slice(4, 6)].map(p => parseInt(p, 16) / 255);
 };
 const effectivePin = l => {
+  if (l.exaggerated) { return hexToRgb(l.exaggerated); }
   if (l.brand_color) { return hexToRgb(l.brand_color); }
   if (l.pin) {
     return ['r', 'g', 'b'].map(c => l.pin[c] !== undefined ? l.pin[c] / 255 : null);
   }
   if (l.association) { return hexToRgb(l.association); }
+  if (l.saving_pin)  { return hexToRgb(l.saving_pin); }
   return [null, null, null];
 };
 

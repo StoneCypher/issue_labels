@@ -96,16 +96,21 @@ function main() {
 
   // colour pinning: pin[i] is [r, g, b], each entry a fixed value in 0..1 or
   // null. Pinned channels are held fixed; null channels are sim-driven.
-  // Three sources, in descending precedence: brand_color (logo/brand identity,
-  // full 3-channel hex), pin (gradient scales, per-channel 0..255 object),
-  // association (looser semantic cue, full 3-channel hex). Each is a separate
-  // field so the source-of-truth records WHY the colour is fixed.
+  // Five sources, in descending precedence: exaggerated (a deliberate shift
+  // of a brand color to break it out of a crowded cube region; full 3-channel
+  // hex), brand_color (logo/brand identity, full 3-channel hex), pin (gradient
+  // scales, per-channel 0..255 object), association (looser semantic cue,
+  // full 3-channel hex), saving_pin (lowest priority: a sim-rescue anchor
+  // applied to labels that would otherwise drift into the muted center;
+  // full 3-channel hex). Each field records WHY the colour is fixed.
   const pin = labels.map(l => {
+    if (l.exaggerated) { return hexToRgb(l.exaggerated); }
     if (l.brand_color) { return hexToRgb(l.brand_color); }
     if (l.pin) {
       return ['r', 'g', 'b'].map(c => l.pin[c] !== undefined ? l.pin[c] / 255 : null);
     }
     if (l.association) { return hexToRgb(l.association); }
+    if (l.saving_pin)  { return hexToRgb(l.saving_pin); }
     return [null, null, null];
   });
 
@@ -212,9 +217,11 @@ function main() {
     o.description = l.description;
     o.color = l.color;
     if (l.exempt)        { o.exempt = l.exempt; }
+    if (l.exaggerated)   { o.exaggerated = l.exaggerated; }
     if (l.pin)           { o.pin = l.pin; }
     if (l.brand_color)   { o.brand_color = l.brand_color; }
     if (l.association)   { o.association = l.association; }
+    if (l.saving_pin)    { o.saving_pin = l.saving_pin; }
     if (l.core)          { o.core = l.core; }
     if (l.constellation) { o.constellation = l.constellation; }
     return ser(o);
