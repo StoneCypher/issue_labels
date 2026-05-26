@@ -22,62 +22,13 @@ Published tags:
 
 &nbsp;
 
-## [Untagged] - May 22, 2026 12:15:35 PM
+## [Untagged] - May 25, 2026 11:55:04 AM
 
-Commit [a1d8a28c0c7eac36aa98f27ae3b3332a9c2cf5a0](https://github.com/StoneCypher/issue_labels/commit/a1d8a28c0c7eac36aa98f27ae3b3332a9c2cf5a0)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * ci: gate verify-version-bump against the template repo; bump to 0.20.1 (#33)
-  * The verify-version-bump CI job runs verify_version_bump.cjs, which
-calls `npm view issue_labels version` to compare
-the local version against the published version. The template package
-isn't published, so npm view returns nothing valid and the job exits
-non-zero on every CI run for this template repo.
-  * Gates the job on GitHub's first-class is_template repository flag:
-  *     if: github.event.repository.is_template != true
-  * - This template has is_template: true → job is skipped here.
-- "Use this template" creates a new repo with is_template: false →
-  clones run the job normally.
-- The release job's `needs: [..., verify-version-bump]` continues to
-  work correctly: a skipped need cascades into a skipped dependent,
-  which is the desired behavior on the template (we don't want to
-  release the template itself).
-  * Avoids the gross alternative of name-gating against this repo's
-package name.
-  * Closes #32
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - May 22, 2026 12:15:07 PM
-
-Commit [a628506200be6df94e7dbed309b6ad8452d28655](https://github.com/StoneCypher/issue_labels/commit/a628506200be6df94e7dbed309b6ad8452d28655)
+Commit [e3cbe76207db95a7dbd2345f63599f59d1b6cf5b](https://github.com/StoneCypher/issue_labels/commit/e3cbe76207db95a7dbd2345f63599f59d1b6cf5b)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
-  * ci: gate verify-version-bump against the template repo; bump to 0.20.1
-  * The verify-version-bump CI job runs verify_version_bump.cjs, which
-calls `npm view issue_labels version` to compare
-the local version against the published version. The template package
-isn't published, so npm view returns nothing valid and the job exits
-non-zero on every CI run for this template repo.
-  * Gates the job on GitHub's first-class is_template repository flag:
-  *     if: github.event.repository.is_template != true
-  * - This template has is_template: true → job is skipped here.
-- "Use this template" creates a new repo with is_template: false →
-  clones run the job normally.
-- The release job's `needs: [..., verify-version-bump]` continues to
-  work correctly: a skipped need cascades into a skipped dependent,
-  which is the desired behavior on the template (we don't want to
-  release the template itself).
-  * Avoids the gross alternative of name-gating against this repo's
-package name.
-  * Closes #32
+  * show to the Dan (tm)
 
 
 
@@ -86,25 +37,20 @@ package name.
 
 &nbsp;
 
-## [Untagged] - May 22, 2026 11:57:40 AM
+## [Untagged] - May 23, 2026 8:06:13 AM
 
-Commit [340341aab5cee0cbc92da0fbf88eeb4f2ea2598a](https://github.com/StoneCypher/issue_labels/commit/340341aab5cee0cbc92da0fbf88eeb4f2ea2598a)
+Commit [c9014b82169334ad02ffb6e5edb458838d3e87b8](https://github.com/StoneCypher/issue_labels/commit/c9014b82169334ad02ffb6e5edb458838d3e87b8)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
-  * chore: catch up version to 0.20.0 (#31)
-  * Corrects the version-bump policy applied across the recent build-perf
-PR series (#21–#30). I bumped PATCH each time when this project's
-convention — both /sc-commit's intro paragraph and the project's own
-git history (0.6.0, 0.7.0, 0.8.0, 0.9.0, 0.10.0 all minor bumps for
-build/refactor work) — calls for MINOR per commit, with PATCH reset
-to zero.
-  * If MINOR had been applied per PR across the 10 merged PRs (baseline +
-9 perf), the version trajectory would have been:
-  *   0.10.7 → 0.11.0 → 0.12.0 → 0.13.0 → 0.14.0 → 0.15.0
-         → 0.16.0 → 0.17.0 → 0.18.0 → 0.19.0 → 0.20.0
-  * This single commit jumps from the actual 0.10.17 to the intended
-0.20.0 so the published version matches the work that landed.
+  * fix(labels): trim 4 descriptions and de-comma 2 Effort names for GitHub
+  * GitHub's label API rejects descriptions over 100 chars and names containing
+commas. Trims descriptions on `Issue needs work`, `Stale`, `Slop`, `Backlog`
+to under 100 chars while keeping the meaning, and swaps the comma in
+`Effort: 4/5 - plan and divide, up to 1 month` and
+`Effort: 5/5 - plan and divide, enormous` for a semicolon. Regenerated
+docs/colors_3d.html to match. JSON written via the canonical serializer.
+All 286 labels now sync cleanly via gh label create --force.
 
 
 
@@ -113,25 +59,18 @@ to zero.
 
 &nbsp;
 
-## [Untagged] - May 22, 2026 11:57:13 AM
+## [Untagged] - May 23, 2026 12:01:52 AM
 
-Commit [f2cede56d4d12e238c97bd7027bd4140a65c8474](https://github.com/StoneCypher/issue_labels/commit/f2cede56d4d12e238c97bd7027bd4140a65c8474)
+Commit [d49f4c646649b92c4f3ccb8bd6a875682b78b19d](https://github.com/StoneCypher/issue_labels/commit/d49f4c646649b92c4f3ccb8bd6a875682b78b19d)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
-  * chore: catch up version to 0.20.0
-  * Corrects the version-bump policy applied across the recent build-perf
-PR series (#21–#30). I bumped PATCH each time when this project's
-convention — both /sc-commit's intro paragraph and the project's own
-git history (0.6.0, 0.7.0, 0.8.0, 0.9.0, 0.10.0 all minor bumps for
-build/refactor work) — calls for MINOR per commit, with PATCH reset
-to zero.
-  * If MINOR had been applied per PR across the 10 merged PRs (baseline +
-9 perf), the version trajectory would have been:
-  *   0.10.7 → 0.11.0 → 0.12.0 → 0.13.0 → 0.14.0 → 0.15.0
-         → 0.16.0 → 0.17.0 → 0.18.0 → 0.19.0 → 0.20.0
-  * This single commit jumps from the actual 0.10.17 to the intended
-0.20.0 so the published version matches the work that landed.
+  * chore: scaffold-prep edits from template init
+  * Pre-existing modifications carried from issue_labels' initialization off
+the TS-package template -- template-name swaps in rollup.config.js,
+typedoc-options.cjs, and src/html/index.html, plus regenerated docs/, dist/,
+coverage-stoch/, and .claude/settings.local.json. Bundled separately from
+the extraction to keep that commit's history focused on the moved code.
 
 
 
@@ -140,40 +79,22 @@ to zero.
 
 &nbsp;
 
-## [Untagged] - May 22, 2026 2:01:41 AM
+## [Untagged] - May 22, 2026 11:54:14 PM
 
-Commit [20a9c106a021b1f837f8fc3770a117caf73ae6e6](https://github.com/StoneCypher/issue_labels/commit/20a9c106a021b1f837f8fc3770a117caf73ae6e6)
+Commit [2f7ae79561c54d1da754bf5464c39658eed4d33e](https://github.com/StoneCypher/issue_labels/commit/2f7ae79561c54d1da754bf5464c39658eed4d33e)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
-  * perf(build): chunk build into parallel stages; bump to 0.10.17 (#30)
-  * Replaces the 15-step `&&`-chain in the `build` npm script with a
-Node orchestrator (src/build_js/run_build.js) that runs the build
-as six topologically-correct parallel stages. Each stage's steps
-run concurrently via spawn+Promise.all; stages run serially.
-  * Stage layout:
-  Stage 0: clean
-  Stage 1 (parallel): typescript, docs#1, just_test_save, eslint,
-                      cloc, changelog
-  Stage 2 (parallel): update_madlibs, rollup, dts
-  Stage 3 (parallel): viz_png, terser
-  Stage 4 (parallel): docs#2, attw
-  Stage 5: site
-  * Stage boundaries reflect actual file-level dependencies:
-  - update_madlibs needs coverage-typedoc.json (docs#1) and
-    test_output.txt (just_test_save), so it follows Stage 1.
-  - rollup only needs typescript output, so it runs alongside
-    update_madlibs in Stage 2.
-  - viz_png copies PNGs into docs/docs/, which docs#2 (typedoc)
-    relocates into docs/docs/media/, so viz_png precedes docs#2.
-  - site writes into docs/docs/; it follows docs#2 to avoid being
-    wiped by typedoc's output-dir refresh.
-  * No new dependencies — orchestrator uses just child_process from
-the stdlib. Builds on the prior PR series: #17 moved tests off
-the front so they could join Stage 1; #18 consolidated rollup
-so Stage 2 can run a single rollup invocation; #14/#13/#12/#16
-already parallelized their respective steps internally.
-  * Closes #15
+  * feat: extract issue-label taxonomy and 3D colorer from var_icons
+  * Lifts the 286-label general-purpose taxonomy (20 categories, 55 subcategories)
+and its force-directed RGB-cube colorer out of var_icons per the plan in
+var_icons/EXTRACT_VIZ_TO_NEW_REPO.md. bake_colors.cjs's LABEL_FILE switched
+from a hardcoded var_icons path to __dirname-relative. Adds viz / viz:html /
+bake npm scripts and three@^0.184.0 devDep. Eslint Node-globals glob widened
+from *.js to *.{js,cjs} so the moved CommonJS scripts lint cleanly; this
+side-fix also benefits pre-existing .cjs build scripts. Verified end-to-end
+via headless Chromium: sim runs, 286 labels render, export button round-trips
+through bake_colors.cjs unchanged.
 
 
 
@@ -182,159 +103,10 @@ already parallelized their respective steps internally.
 
 &nbsp;
 
-## [Untagged] - May 22, 2026 2:00:45 AM
+## [Untagged] - May 22, 2026 10:49:55 PM
 
-Commit [5d98dc600c6391fdd548f12b235e0624a5b8886d](https://github.com/StoneCypher/issue_labels/commit/5d98dc600c6391fdd548f12b235e0624a5b8886d)
+Commit [0fb665971e0a2c57fc1983aeabdcd63eb399a158](https://github.com/StoneCypher/issue_labels/commit/0fb665971e0a2c57fc1983aeabdcd63eb399a158)
 
 Author: `John Haugeland <stonecypher@gmail.com>`
 
-  * perf(build): chunk build into parallel stages; bump to 0.10.17
-  * Replaces the 15-step `&&`-chain in the `build` npm script with a
-Node orchestrator (src/build_js/run_build.js) that runs the build
-as six topologically-correct parallel stages. Each stage's steps
-run concurrently via spawn+Promise.all; stages run serially.
-  * Stage layout:
-  Stage 0: clean
-  Stage 1 (parallel): typescript, docs#1, just_test_save, eslint,
-                      cloc, changelog
-  Stage 2 (parallel): update_madlibs, rollup, dts
-  Stage 3 (parallel): viz_png, terser
-  Stage 4 (parallel): docs#2, attw
-  Stage 5: site
-  * Stage boundaries reflect actual file-level dependencies:
-  - update_madlibs needs coverage-typedoc.json (docs#1) and
-    test_output.txt (just_test_save), so it follows Stage 1.
-  - rollup only needs typescript output, so it runs alongside
-    update_madlibs in Stage 2.
-  - viz_png copies PNGs into docs/docs/, which docs#2 (typedoc)
-    relocates into docs/docs/media/, so viz_png precedes docs#2.
-  - site writes into docs/docs/; it follows docs#2 to avoid being
-    wiped by typedoc's output-dir refresh.
-  * No new dependencies — orchestrator uses just child_process from
-the stdlib. Builds on the prior PR series: #17 moved tests off
-the front so they could join Stage 1; #18 consolidated rollup
-so Stage 2 can run a single rollup invocation; #14/#13/#12/#16
-already parallelized their respective steps internally.
-  * Closes #15
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - May 22, 2026 1:57:13 AM
-
-Commit [3ab61405a5e42d110ff78565eeca923a6cd06646](https://github.com/StoneCypher/issue_labels/commit/3ab61405a5e42d110ff78565eeca923a6cd06646)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * perf(build): move tests off the front of the build chain; bump to 0.10.16 (#29)
-  * The `build` chain used to start with `just_test_save` — every other
-step waited behind the full test suite even though typescript, the
-first docs (typedoc) pass, and the test runner are mutually
-independent (vitest reads source TS directly via its transformer
-and doesn't depend on tsc output).
-  * Moves `just_test_save` to just before `update_madlibs`. Tests still
-run inside `build` (per project policy) and still feed
-`update_madlibs` with current data — no staleness in the README
-banner — but they no longer block the front of the chain.
-  * The wall-time benefit lands when this is combined with #15
-(parallel stages): with this PR's structural move, typescript,
-docs#1, and just_test_save become an independent set that the
-parallel-stages PR can put into a single concurrent stage.
-  * Closes #17
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - May 22, 2026 1:56:22 AM
-
-Commit [35fddbfc1b4f7e04c9a79f4dc2ea4f39bf747d68](https://github.com/StoneCypher/issue_labels/commit/35fddbfc1b4f7e04c9a79f4dc2ea4f39bf747d68)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * perf(build): move tests off the front of the build chain; bump to 0.10.16
-  * The `build` chain used to start with `just_test_save` — every other
-step waited behind the full test suite even though typescript, the
-first docs (typedoc) pass, and the test runner are mutually
-independent (vitest reads source TS directly via its transformer
-and doesn't depend on tsc output).
-  * Moves `just_test_save` to just before `update_madlibs`. Tests still
-run inside `build` (per project policy) and still feed
-`update_madlibs` with current data — no staleness in the README
-banner — but they no longer block the front of the chain.
-  * The wall-time benefit lands when this is combined with #15
-(parallel stages): with this PR's structural move, typescript,
-docs#1, and just_test_save become an independent set that the
-parallel-stages PR can put into a single concurrent stage.
-  * Closes #17
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - May 22, 2026 1:52:33 AM
-
-Commit [9b93c871b183a14d400c8f4a02ed67627a3952b8](https://github.com/StoneCypher/issue_labels/commit/9b93c871b183a14d400c8f4a02ed67627a3952b8)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * perf(build): consolidate Rollup passes into one config; bump to 0.10.15 (#28)
-  * Merges rollup.ctsphase.config.js into rollup.config.js so the build
-runs `rollup -c` once instead of twice. One cold Rollup startup
-eliminated.
-  * The .d.cts emission config's input changes from `dist/index.d.ts`
-(which used to be populated by the `dts` copy step earlier in the
-build chain) to `build/ts/index.d.ts` (which `tsc --build` emits
-directly). That removes the ordering dependency on `dts` and lets
-the type-declaration bundle run alongside the ESM/CJS/IIFE bundles
-in a single Rollup process.
-  * Drops:
-- rollup.ctsphase.config.js
-- the `rollup-cts` npm script
-- the `&& npm run rollup-cts` step from the build chain
-  * The dts step still runs (it also copies stub.d.ts and the source
-maps — those don't go through Rollup), but no longer feeds the
-ctsphase config.
-  * Closes #18
-
-
-
-
-&nbsp;
-
-&nbsp;
-
-## [Untagged] - May 22, 2026 1:51:40 AM
-
-Commit [bd107d7234218e20906d5892063e109041b988f2](https://github.com/StoneCypher/issue_labels/commit/bd107d7234218e20906d5892063e109041b988f2)
-
-Author: `John Haugeland <stonecypher@gmail.com>`
-
-  * perf(build): consolidate Rollup passes into one config; bump to 0.10.15
-  * Merges rollup.ctsphase.config.js into rollup.config.js so the build
-runs `rollup -c` once instead of twice. One cold Rollup startup
-eliminated.
-  * The .d.cts emission config's input changes from `dist/index.d.ts`
-(which used to be populated by the `dts` copy step earlier in the
-build chain) to `build/ts/index.d.ts` (which `tsc --build` emits
-directly). That removes the ordering dependency on `dts` and lets
-the type-declaration bundle run alongside the ESM/CJS/IIFE bundles
-in a single Rollup process.
-  * Drops:
-- rollup.ctsphase.config.js
-- the `rollup-cts` npm script
-- the `&& npm run rollup-cts` step from the build chain
-  * The dts step still runs (it also copies stub.d.ts and the source
-maps — those don't go through Rollup), but no longer feeds the
-ctsphase config.
-  * Closes #18
+  * Initial commit
