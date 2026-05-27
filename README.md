@@ -1,10 +1,10 @@
-# issue_labels v0.2.0
+# issue_labels v0.3.0
 
-> Version 0.2.0 was built on Tuesday, May 26, 2026 at GMT-07:00 `1779812163989` from hash `e3cbe76`.
+> Version 0.3.0 was built on Tuesday, May 26, 2026 at GMT-07:00 `1779821117907` from hash `d056a0f`.
 
 A general-purpose **286-label issue taxonomy** for GitHub projects — 20 categories, 55 subcategories — paired with a 3D force-directed colorer that places each label as a point in the sRGB cube so visually-similar labels indicate semantically-related concerns.
 
-<!-- Supported embeds: 1779812163989 Tuesday, May 26, 2026 at GMT-07:00 66.66 2 50 e3cbe76 {{stochbranch}} 66.66 {{stochfunc}} {{stochline}} 4 33 {{unitbranch}} {{unitfunc}} {{unitline}} 29 0.2.0 -->
+<!-- Supported embeds: 1779821117907 Tuesday, May 26, 2026 at GMT-07:00 100 5 20 d056a0f {{stochbranch}} 100 {{stochfunc}} {{stochline}} 5 39 {{unitbranch}} {{unitfunc}} {{unitline}} 34 0.3.0 -->
 
 
 
@@ -57,16 +57,16 @@ The seed → live → export → bake loop:
   </tr>
   <tr>
     <th>Unit</th>
-    <td>29</td>
-    <td>66.66<small>%</small></td>
+    <td>34</td>
+    <td>100<small>%</small></td>
     <td>{{unitbranch}}<small>%</small></td>
     <td>{{unitfunc}}<small>%</small></td>
     <td>{{unitline}}<small>%</small></td>
   </tr>
   <tr>
     <th>Stochastic</th>
-    <td>4</td>
-    <td>66.66<small>%</small></td>
+    <td>5</td>
+    <td>100<small>%</small></td>
     <td>{{stochbranch}}<small>%</small></td>
     <td>{{stochfunc}}<small>%</small></td>
     <td>{{stochline}}<small>%</small></td>
@@ -77,12 +77,12 @@ The seed → live → export → bake loop:
   <tr>
     <th></th>
     <th>Docblock count</th>
-    <th>50<small>%</small></th>
+    <th>20<small>%</small></th>
   </tr>
   <tr>
     <th>Docblock coverage</th>
-    <td>2</td>
-    <td>50<small>%</small></td>
+    <td>5</td>
+    <td>20<small>%</small></td>
   </tr>
 </table>
 
