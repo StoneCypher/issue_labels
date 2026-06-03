@@ -1,6 +1,6 @@
 {
   "name": "issue_labels",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "issue_labels",
   "keywords": [
     "issue_labels",
@@ -60,7 +60,8 @@
     "ci": "echo starting && node -e \"console.log(new Date().toLocaleString())\" && npm run build && echo finishing && node -e \"console.log(new Date().toLocaleString())\"",
     "viz": "node src/build_js/assign_label_colors.cjs && node src/build_js/visualize_colors_3d.cjs",
     "viz:html": "node src/build_js/visualize_colors_3d.cjs",
-    "bake": "node src/build_js/bake_colors.cjs"
+    "bake": "node src/build_js/bake_colors.cjs",
+    "export:labels": "node src/build_js/export_labels_ts.cjs"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",

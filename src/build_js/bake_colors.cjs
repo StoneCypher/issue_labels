@@ -47,9 +47,11 @@ const lines = labels.map(l => {
   o.description = l.description;
   if (l.color)         { o.color = l.color; }
   if (l.exempt)        { o.exempt = l.exempt; }
+  if (l.exaggerated)   { o.exaggerated = l.exaggerated; }
   if (l.pin)           { o.pin = l.pin; }
   if (l.brand_color)   { o.brand_color = l.brand_color; }
   if (l.association)   { o.association = l.association; }
+  if (l.saving_pin)    { o.saving_pin = l.saving_pin; }
   if (l.core)          { o.core = l.core; }
   if (l.constellation) { o.constellation = l.constellation; }
   return ser(o);

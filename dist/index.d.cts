@@ -17,10 +17,11 @@
  * @author John Haugeland
  *
  * @privateRemarks
- * Generated from src/data/prototype.json. To regenerate after the visualizer
- * sim updates label positions, capture a new prototype.json and re-run the
- * one-off generator. The array is frozen-by-type (readonly) so consumers
- * can't mutate it accidentally.
+ * Generated from src/data/standard_issue_label.json by
+ * src/build_js/export_labels_ts.cjs (`npm run export:labels`). To regenerate
+ * after the visualizer sim and bake step update label colors, re-run that
+ * script -- it rewrites only the data rows, leaving this header intact. The
+ * array is frozen-by-type (readonly) so consumers can't mutate it accidentally.
  */
 interface Label {
     readonly name: string;

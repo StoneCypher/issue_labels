@@ -1,10 +1,10 @@
-# issue_labels v0.3.0
+# issue_labels v0.4.0
 
-> Version 0.3.0 was built on Tuesday, May 26, 2026 at GMT-07:00 `1779821117907` from hash `d056a0f`.
+> Version 0.4.0 was built on Wednesday, June 3, 2026 at GMT-07:00 `1780496388187` from hash `bbace3a`.
 
 A general-purpose **286-label issue taxonomy** for GitHub projects — 20 categories, 55 subcategories — paired with a 3D force-directed colorer that places each label as a point in the sRGB cube so visually-similar labels indicate semantically-related concerns.
 
-<!-- Supported embeds: 1779821117907 Tuesday, May 26, 2026 at GMT-07:00 100 5 20 d056a0f {{stochbranch}} 100 {{stochfunc}} {{stochline}} 5 39 {{unitbranch}} {{unitfunc}} {{unitline}} 34 0.3.0 -->
+<!-- Supported embeds: 1780496388187 Wednesday, June 3, 2026 at GMT-07:00 100 5 20 bbace3a {{stochbranch}} 100 {{stochfunc}} {{stochline}} 5 39 {{unitbranch}} {{unitfunc}} {{unitline}} 34 0.4.0 -->
 
 
 

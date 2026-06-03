@@ -22,6 +22,41 @@ Published tags:
 
 &nbsp;
 
+## [Untagged] - May 26, 2026 11:46:29 AM
+
+Commit [bbace3aa349abc537a346b44e92ba97e6dd36781](https://github.com/StoneCypher/issue_labels/commit/bbace3aa349abc537a346b44e92ba97e6dd36781)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+  * feat: convert prototype.json to TypeScript labels export, drop stub
+  * The 286-label taxonomy is now a first-class TypeScript export instead of
+a flat JSON snapshot. Consumers can import the labels and the row type
+through any of the four supported channels (ESM, CJS, IIFE, modern
+module script).
+  * Source:
+- src/ts/labels.ts: `export const labels: readonly Label[]` plus the
+  `Label` interface (name / color / description, all readonly)
+- src/ts/index.ts: re-exports labels and Label
+- src/ts/stub.ts and its three test files removed per its own DocBlock
+- src/data/prototype.json deleted (the snapshot, now superseded)
+  * Tests:
+- src/ts/tests/labels.spec.ts: shape, uniqueness, hex format, plus a
+  cube-residency invariant (every color outside the 25-75% inner cube)
+- src/ts/tests/labels.stoch.ts: fast-check properties on random index
+  sampling and distinct-index distinctness
+  * Build:
+- npm run build passes end-to-end on the existing pipeline
+- 100% statement/branch/func/line coverage on labels.ts
+- attw clean across node10, node16 CJS, node16 ESM, bundler
+- Multi-format outputs preserved: dist/index.{mjs,cjs,iife.js} + .d.ts/.d.cts
+
+
+
+
+&nbsp;
+
+&nbsp;
+
 ## [Untagged] - May 26, 2026 9:24:51 AM
 
 Commit [d056a0f518becb025c884dc867506c90e52844f9](https://github.com/StoneCypher/issue_labels/commit/d056a0f518becb025c884dc867506c90e52844f9)
