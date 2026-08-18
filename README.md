@@ -25,6 +25,44 @@ The 20 categories: Type · Infrastructure · Component · Status · Estimation �
 
 &nbsp;
 
+## Installing the taxonomy into a repo
+
+If a repo already carries the taxonomy, copy the whole set in a single call:
+
+```bash
+gh label clone OWNER/SOURCE --repo OWNER/DEST --force
+```
+
+**Never create the labels one at a time in a loop.** At this size the per-label path takes about
+ten minutes to accomplish exactly what the one `clone` above does instantly.
+
+### Two gotchas that will silently corrupt the result
+
+**Delete the stock labels _before_ cloning, not after.** A fresh GitHub repo ships with lowercase
+defaults — `bug`, `enhancement`, `documentation`, `duplicate`, `good first issue`, `help wanted`,
+`invalid`, `question`, `wontfix`, `dependencies` — and label names collide case-insensitively on
+creation while being stored case-sensitively. Cloning into a repo that still holds `bug` will
+**silently skip** `Bug`, with no error and no warning.
+
+Deleting afterward is worse than useless. `gh issue edit --add-label "Bug"` resolves to the
+existing lowercase `bug`, so a migration written as `--add-label "Bug" --remove-label "bug"`
+removes the label and adds nothing — quietly stripping the type off every issue it touches.
+
+**`gh label list` returns only 30 results by default.** Always pass `--limit 500`. Any conclusion
+about which labels exist that was drawn without it was drawn from the first 30 of several hundred.
+
+### Verify parity afterward
+
+Do this every time. Both gotchas above fail silently, so the copy looking fine proves nothing.
+
+```bash
+gh label list --repo OWNER/SOURCE --limit 500 --json name -q '.[].name' | sort > /tmp/a.txt
+gh label list --repo OWNER/DEST   --limit 500 --json name -q '.[].name' | sort > /tmp/b.txt
+comm -3 /tmp/a.txt /tmp/b.txt   # empty output means the copy is exact
+```
+
+&nbsp;
+
 ## Usage
 
 ```bash
