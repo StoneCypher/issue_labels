@@ -44,6 +44,43 @@ The seed → live → export → bake loop:
 
 &nbsp;
 
+## Applying the taxonomy to another repository
+
+`gh label clone` copies every label from this repository's tracker to another one in a single command:
+
+```bash
+gh label clone StoneCypher/issue_labels --repo <owner>/<target> --force
+```
+
+`--force` updates labels that already exist on the target instead of skipping them.
+
+**The gotcha.** GitHub treats label names as case-insensitive for uniqueness, so a stock `bug` on the target blocks the taxonomy's `Bug` from being created. `--force` updates the existing label's colour and description but does **not** rename it — so the target ends up holding the right label under the wrong name, and the clone reports success either way.
+
+A fresh GitHub repository ships with nine defaults that collide like this: `accessibility`, `bug`, `dependencies`, `duplicate`, `enhancement`, `good first issue`, `help wanted`, `javascript`, `question`. Repair them by renaming rather than deleting, which preserves any issue assignments the labels already carry:
+
+```bash
+gh label edit "bug" --name "Bug" --repo <owner>/<target>
+```
+
+Verify by diffing the two label sets. Every taxonomy label should be present on the target, so the first `comm` prints nothing:
+
+```bash
+gh label list --repo StoneCypher/issue_labels --limit 400 --json name --jq '.[].name' | sort > source.txt
+gh label list --repo <owner>/<target>         --limit 400 --json name --jq '.[].name' | sort > target.txt
+comm -23 source.txt target.txt   # missing from target — should be empty
+comm -13 source.txt target.txt   # extra on target — the leftovers below
+```
+
+Three GitHub defaults have no taxonomy equivalent and survive the clone untouched: `documentation`, `invalid`, `wontfix`. The first of those looks like an omission and isn't — the taxonomy's documentation label is `Documentation and docgen`, so the short stock name is redundant rather than missing. Delete all three if the tracker should hold the taxonomy and nothing else:
+
+```bash
+gh label delete "documentation" --repo <owner>/<target> --yes
+```
+
+A clean result is `diff` on the two sorted label lists printing nothing at all.
+
+&nbsp;
+
 ## Test status
 
 <table>
