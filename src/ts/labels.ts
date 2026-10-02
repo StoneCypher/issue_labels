@@ -41,7 +41,7 @@ export const labels: readonly Label[] = [
   { name: "Color", color: "#c5a8c4", description: "Relates to COLR/CPAL color handling in the font." },
   { name: "Composition", color: "#cba4b6", description: "Relates to composing glyphs from other glyphs." },
   { name: "Rendering compatibility", color: "#c098ba", description: "Cross-browser or cross-platform rendering differences." },
-  { name: "Frontend", color: "#f8c3a2", description: "Concerns the React frontend rather than the font engine." },
+  { name: "Frontend", color: "#f8c3a2", description: "Concerns the user-facing frontend." },
   { name: "Is blocked", color: "#1dff79", description: "Cannot progress until another issue or dependency clears." },
   { name: "Good first issue", color: "#5e4830", description: "Well-scoped and approachable for new contributors." },
   { name: "Help wanted", color: "#76dc6a", description: "Maintainers are actively seeking outside help." },
