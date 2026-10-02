@@ -1,10 +1,10 @@
 # issue_labels v0.3.0
 
-> Version 0.3.0 was built on Friday, October 2, 2026 at GMT-07:00 `1790982734656` from hash `3674bc2`.
+> Version 0.3.0 was built on Friday, October 2, 2026 at GMT-07:00 `1790983694606` from hash `2d8e576`.
 
 A general-purpose **286-label issue taxonomy** for GitHub projects — 20 categories, 55 subcategories — paired with a 3D force-directed colorer that places each label as a point in the sRGB cube so visually-similar labels indicate semantically-related concerns.
 
-<!-- Supported embeds: 1790982734656 Friday, October 2, 2026 at GMT-07:00 100 5 20 3674bc2 {{stochbranch}} 100 {{stochfunc}} {{stochline}} 5 39 {{unitbranch}} {{unitfunc}} {{unitline}} 34 0.3.0 -->
+<!-- Supported embeds: 1790983694606 Friday, October 2, 2026 at GMT-07:00 100 5 20 2d8e576 {{stochbranch}} 100 {{stochfunc}} {{stochline}} 8 48 {{unitbranch}} {{unitfunc}} {{unitline}} 40 0.3.0 -->
 
 
 
@@ -91,7 +91,7 @@ gh label create "area:network" --repo OWNER/REPO --description "Networking, serv
   </tr>
   <tr>
     <th>Unit</th>
-    <td>34</td>
+    <td>40</td>
     <td>100<small>%</small></td>
     <td>{{unitbranch}}<small>%</small></td>
     <td>{{unitfunc}}<small>%</small></td>
@@ -99,7 +99,7 @@ gh label create "area:network" --repo OWNER/REPO --description "Networking, serv
   </tr>
   <tr>
     <th>Stochastic</th>
-    <td>5</td>
+    <td>8</td>
     <td>100<small>%</small></td>
     <td>{{stochbranch}}<small>%</small></td>
     <td>{{stochfunc}}<small>%</small></td>

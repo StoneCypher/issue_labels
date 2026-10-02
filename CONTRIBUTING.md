@@ -167,7 +167,7 @@ npm run build
 
 The build pipeline runs these steps in order:
 
-1. Clean output directories (`build/`, `dist/`, `docs/`)
+1. Clean output directories (`build/`, `dist/`, `docs/`) — `docs/colors_3d.html` and `docs/three/` are kept, since only `npm run viz` regenerates them
 2. Run unit and stochastic tests, save results
 3. Compile TypeScript
 4. Generate TypeDoc documentation
