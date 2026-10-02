@@ -8,7 +8,7 @@
   { "name": "Color", "category": "Component", "subcategory": "font", "description": "Relates to COLR/CPAL color handling in the font.", "color": "#3358ff" },
   { "name": "Composition", "category": "Component", "subcategory": "font", "description": "Relates to composing glyphs from other glyphs.", "color": "#4452ff" },
   { "name": "Rendering compatibility", "category": "Component", "subcategory": "font", "description": "Cross-browser or cross-platform rendering differences.", "color": "#3245ff", "saving_pin": "#c098ba" },
-  { "name": "Frontend", "category": "Component", "subcategory": "app", "description": "Concerns the React frontend rather than the font engine.", "color": "#ffa2b7" },
+  { "name": "Frontend", "category": "Component", "subcategory": "app", "description": "Concerns the user-facing frontend.", "color": "#ffa2b7" },
   { "name": "Is blocked", "category": "Status", "subcategory": "blocked", "description": "Cannot progress until another issue or dependency clears.", "color": "#00a5c3", "core": true },
   { "name": "Good first issue", "category": "Estimation", "subcategory": "Difficulty", "description": "Well-scoped and approachable for new contributors.", "color": "#39c6ff", "core": true },
   { "name": "Help wanted", "category": "Status", "subcategory": "active", "description": "Maintainers are actively seeking outside help.", "color": "#ff9b14", "core": true },
