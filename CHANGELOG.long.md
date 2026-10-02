@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-3 merges
+4 merges
 
 
 
@@ -14,6 +14,39 @@ Published tags:
 
 
 
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - Oct 2, 2026 4:22:14 PM
+
+Commit [2d8e5761b4ba7eb26478dc32b24c3416c5514a03](https://github.com/StoneCypher/issue_labels/commit/2d8e5761b4ba7eb26478dc32b24c3416c5514a03)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+Merges [3674bc2, 64dfb54]
+
+  * Merge pull request #15 from StoneCypher/fix_26-10-02_label-descriptions
+  * fix(taxonomy): make the Frontend label description project-neutral
+
+
+
+
+&nbsp;
+
+&nbsp;
+
+## [Untagged] - Oct 2, 2026 4:13:45 PM
+
+Commit [64dfb54cdda4f87b23ea66a052843efeff685db4](https://github.com/StoneCypher/issue_labels/commit/64dfb54cdda4f87b23ea66a052843efeff685db4)
+
+Author: `John Haugeland <stonecypher@gmail.com>`
+
+  * fix(taxonomy): make the Frontend label description project-neutral
 
 
 
