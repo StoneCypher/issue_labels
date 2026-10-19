@@ -2,7 +2,7 @@
  * Standard issue-label set, with their resolved colors and human-readable
  * descriptions. The array is the only thing you need; `Label`describes a row.
  *
- * @summary 286-label issue taxonomy with sRGB colors and descriptions
+ * @summary 289-label issue taxonomy with sRGB colors and descriptions
  * @category labels
  *
  * @example

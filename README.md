@@ -1,10 +1,10 @@
-# issue_labels v0.3.0
+# issue_labels v0.4.0
 
-> Version 0.3.0 was built on Tuesday, May 26, 2026 at GMT-07:00 `1779821117907` from hash `d056a0f`.
+> Version 0.4.0 was built on Monday, October 19, 2026 at GMT-07:00 `1792425228897` from hash `2b796b8`.
 
-A general-purpose **286-label issue taxonomy** for GitHub projects — 20 categories, 55 subcategories — paired with a 3D force-directed colorer that places each label as a point in the sRGB cube so visually-similar labels indicate semantically-related concerns.
+A general-purpose **289-label issue taxonomy** for GitHub projects — 20 categories, 55 subcategories — paired with a 3D force-directed colorer that places each label as a point in the sRGB cube so visually-similar labels indicate semantically-related concerns.
 
-<!-- Supported embeds: 1779821117907 Tuesday, May 26, 2026 at GMT-07:00 100 5 20 d056a0f {{stochbranch}} 100 {{stochfunc}} {{stochline}} 5 39 {{unitbranch}} {{unitfunc}} {{unitline}} 34 0.3.0 -->
+<!-- Supported embeds: 1792425228897 Monday, October 19, 2026 at GMT-07:00 100 5 20 2b796b8 {{stochbranch}} 100 {{stochfunc}} {{stochline}} 5 39 {{unitbranch}} {{unitfunc}} {{unitline}} 34 0.4.0 -->
 
 
 
@@ -68,7 +68,7 @@ gh label clone StoneCypher/issue_labels --repo OWNER/REPO --force
 gh label create "area:network" --repo OWNER/REPO --description "Networking, servers, accounts" --color 5c74a0 --force
 ```
 
-`--force` also normalizes labels GitHub or Dependabot created on their own (for example `dependencies` becomes `Dependencies`), since label names are case-insensitive. When listing labels to check the result, pass `--limit 300`; `gh label list` stops at 30 by default and the taxonomy alone is 286.
+`--force` also normalizes labels GitHub or Dependabot created on their own (for example `dependencies` becomes `Dependencies`), since label names are case-insensitive. When listing labels to check the result, pass `--limit 300`; `gh label list` stops at 30 by default and the taxonomy alone is 289.
 
 
 
