@@ -284,5 +284,8 @@
   { "name": "Tiktok", "category": "Outreach", "subcategory": "social", "description": "Relates to the project's presence on TikTok.", "color": "#fe2c55", "brand_color": "#FE2C55" },
   { "name": "Linkedin", "category": "Outreach", "subcategory": "social", "description": "Relates to the project's presence on LinkedIn.", "color": "#0a66c2", "brand_color": "#0A66C2" },
   { "name": "Reddit", "category": "Outreach", "subcategory": "social", "description": "Relates to the project's presence on Reddit.", "color": "#ff4500", "brand_color": "#FF4500" },
-  { "name": "Backlog", "category": "Status", "subcategory": "lifecycle", "description": "Intentionally remaindered: a deliberate decision to shelve, not reject or act on now.", "color": "#44bc34" }
+  { "name": "Backlog", "category": "Status", "subcategory": "lifecycle", "description": "Intentionally remaindered: a deliberate decision to shelve, not reject or act on now.", "color": "#44bc34" },
+  { "name": "Experiment", "category": "Testing", "subcategory": "Testing", "description": "Compares variants under controlled conditions to decide between them.", "color": "#8662ff" },
+  { "name": "Measurement", "category": "Testing", "subcategory": "Testing", "description": "Instruments and reports a quantity rather than changing behavior.", "color": "#7468ff" },
+  { "name": "Determinism", "category": "Testing", "subcategory": "Testing", "description": "Relates to reproducibility: seeding, replay, and lockstep sync hazards.", "color": "#9450ff" }
 ]

@@ -2,7 +2,7 @@
 
 > Version {{version}} was built on {{built_text}} `{{built}}` from hash `{{gh_hash}}`.
 
-A general-purpose **286-label issue taxonomy** for GitHub projects — 20 categories, 55 subcategories — paired with a 3D force-directed colorer that places each label as a point in the sRGB cube so visually-similar labels indicate semantically-related concerns.
+A general-purpose **289-label issue taxonomy** for GitHub projects — 20 categories, 55 subcategories — paired with a 3D force-directed colorer that places each label as a point in the sRGB cube so visually-similar labels indicate semantically-related concerns.
 
 <!-- Supported embeds: {{built}} {{built_text}} {{coverage}} {{docblockcount}} {{doccoverage}} {{gh_hash}} {{stochbranch}} {{stochcoverage}} {{stochfunc}} {{stochline}} {{stochtestcount}} {{testcasecount}} {{unitbranch}} {{unitfunc}} {{unitline}} {{unittestcount}} {{version}} -->
 
@@ -68,7 +68,7 @@ gh label clone StoneCypher/issue_labels --repo OWNER/REPO --force
 gh label create "area:network" --repo OWNER/REPO --description "Networking, servers, accounts" --color 5c74a0 --force
 ```
 
-`--force` also normalizes labels GitHub or Dependabot created on their own (for example `dependencies` becomes `Dependencies`), since label names are case-insensitive. When listing labels to check the result, pass `--limit 300`; `gh label list` stops at 30 by default and the taxonomy alone is 286.
+`--force` also normalizes labels GitHub or Dependabot created on their own (for example `dependencies` becomes `Dependencies`), since label names are case-insensitive. When listing labels to check the result, pass `--limit 300`; `gh label list` stops at 30 by default and the taxonomy alone is 289.
 
 
 

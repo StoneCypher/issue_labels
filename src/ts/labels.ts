@@ -4,7 +4,7 @@
  * Standard issue-label set, with their resolved colors and human-readable
  * descriptions. The array is the only thing you need; `Label`describes a row.
  *
- * @summary 286-label issue taxonomy with sRGB colors and descriptions
+ * @summary 289-label issue taxonomy with sRGB colors and descriptions
  * @category labels
  *
  * @example
@@ -317,5 +317,8 @@ export const labels: readonly Label[] = [
   { name: "Tiktok", color: "#fe2c55", description: "Relates to the project's presence on TikTok." },
   { name: "Linkedin", color: "#0a66c2", description: "Relates to the project's presence on LinkedIn." },
   { name: "Reddit", color: "#ff4500", description: "Relates to the project's presence on Reddit." },
-  { name: "Backlog", color: "#14ff4b", description: "Intentionally remaindered: a deliberate decision to shelve, not reject or act on now." }
+  { name: "Backlog", color: "#14ff4b", description: "Intentionally remaindered: a deliberate decision to shelve, not reject or act on now." },
+  { name: "Experiment", color: "#8662ff", description: "Compares variants under controlled conditions to decide between them." },
+  { name: "Measurement", color: "#7468ff", description: "Instruments and reports a quantity rather than changing behavior." },
+  { name: "Determinism", color: "#9450ff", description: "Relates to reproducibility: seeding, replay, and lockstep sync hazards." }
 ];
